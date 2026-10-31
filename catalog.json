@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 6,
+  "count": 7,
   "by_status": {
-    "live": 6
+    "live": 7
   },
   "entries": [
     {
@@ -261,6 +261,56 @@
       "license": "unverified — no data-specific licence; ENISA website legal notice (site-wide) says \"Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise\"; much of the content is integrated from MITRE CVE and other sources",
       "attribution": "European Union Agency for Cybersecurity (ENISA), European Vulnerability Database (EUVD)",
       "notes": "Human-verified 2026-10-31: HTTP 200 for the HTML shell, but the page is a JavaScript app (\"You need to enable JavaScript to run this app\") and its contents needed headless Chromium. Rendered, it shows lists of \"Critical vulnerabilities\", \"Exploited vulnerabilities\" and \"EU CSIRT coordinated vulnerabilities\" updated within the last hours (e.g. EUVD-2026-114730, changed \"1 hour ago\"). The About page says \"As per the NIS2 Directive, ENISA is mandated to develop and maintain the European vulnerability database\", and the FAQ says it integrates data from \"MITRE's federated CVE Program\", vendor advisories and \"CISA's Known Exploited Vulnerability Catalogue\". The API page (https://euvd.enisa.europa.eu/apidoc) states \"All endpoints are GET, require no authentication\" with base URL https://euvdservices.enisa.europa.eu; a call to /api/lastvulnerabilities returned HTTP 200 application/json. No bulk download was found. Not checked: how far back records go, whether the record count matches CVE, and any rate limit beyond the per-request record caps.\nLicence checked 2026-10-31: no licence is shown on the EUVD pages or API docs. The EUVD footer links ENISA's Legal Notice (https://enisa.europa.eu/about-enisa/legal-notice/legal-notice, redirects to https://www.enisa.europa.eu/about-enisa/legal-notice), which covers \"data, text, software and multimedia\" on \"the ENISA website\" and says \"Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise.\" It also says \"the general principle is free access under open licenses\" under ENISA's IPR policy, without naming one. This is site-wide, not EUVD-specific, and does not address the third-party (CVE, vendor) content, so the licence is left unverified.\n"
+    },
+    {
+      "id": "epo-bulk-data-sets",
+      "type": "dataset",
+      "title": "EPO Patent Bulk Data Sets and Open Patent Services",
+      "description": "The European Patent Office's raw patent data products: EP bibliographic and full-text data, the European Patent Register, the worldwide bibliographic (DOCDB) and legal event (INPADOC) databases, sequence listings, and Boards of Appeal decisions. The same data is available through the Open Patent Services (OPS) REST API, and it underlies Espacenet and most European patent analytics.\n",
+      "publisher": "European Patent Office (European Patent Organisation)",
+      "jurisdiction": {
+        "scope": "regional-bloc",
+        "country": null
+      },
+      "topics": [
+        "patents",
+        "intellectual-property",
+        "invention",
+        "europe"
+      ],
+      "source": {
+        "canonical_url": "https://www.epo.org/en/searching-for-patents/data/bulk-data-sets"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk",
+          "api"
+        ],
+        "auth_required": true,
+        "auth_note": "free EPO account and subscription contract for bulk downloads; OPS needs registration and OAuth app keys (free up to 4 GB per week)",
+        "rate_limit": "OPS: free up to 4 GB of data per week; above that an annual subscription (EUR 2 800) under the Fair use charter"
+      },
+      "format": [
+        "xml"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "European patents (EP), plus worldwide bibliographic and legal-event data from many patent offices (DOCDB, INPADOC)",
+        "temporal": "varies by product (front files updated weekly; back files available)",
+        "cadence": "weekly"
+      },
+      "license": "EPO terms and conditions for the licensing of EPO databases (licensed under contract with mandatory attribution; not an open licence)",
+      "attribution": "This product contains data sourced from EPO databases, © European Patent Organisation",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium), page \"Bulk data sets | epo.org\". It says \"The EPO's bulk data sets are bulk extractions from EPO-internal patent databases made available to external users for further processing\" and lists EP bibliographic data (EBD), the European Patent Register, EP full-text, DOCDB, INPADOC, sequence listings, national full-text data and Boards of Appeal decisions. The download platform, the Bulk Data Distribution Service (https://publication-bdds.apps.epo.org/raw-data/products, HTTP 200), needs an EPO account sign-in. Its public area listed \"14.7 EPO worldwide bibliographic data (DOCDB) - front file Published at: 30.10.2026\" and EP full-text data published 28.10.2026. The OPS page (https://www.epo.org/en/searching-for-patents/data/web-services/ops, HTTP 200) describes \"a web service which provides access to the EPO's data via a standardised XML interface\" and gives the conditions \"'Non-paying' users Up to 4 GB of data per week Free\" and \"More than 4 GB of data per week Annual subscription: EUR 2 800\". The page also points to PATSTAT for statistical analysis; PATSTAT is a separate paid product and is not cataloged here. Which bulk sets are free and which are priced was not checked, because the price list wasn't read. The XML format is assumed from the OPS documentation and DTD/Schema repository; individual product formats weren't checked.\nLicence checked 2026-10-31: \"Terms and conditions for the licensing of EPO databases\" (https://www.epo.org/en/service-support/ordering/raw-data-terms-and-conditions) says \"The EPO databases are available only on a subscription basis\" and \"Where online access to and downloading of the EPO databases is free of charge, no payment is due\". Licensees \"must not use any address data included in the EPO database for advertising, promotional, spamming or other commercial purposes\" and must include the statement \"This product contains data sourced from EPO databases, © European Patent Organisation\". The OPS terms (https://www.epo.org/en/service-support/ordering/terms-and-conditions/ops-terms-and-conditions) grant \"a non-exclusive, non-transferable, worldwide licence to access OPS and use the data obtained via OPS\", allow including the data in users' own products, and restrict making \"the data as such\" available. This is a contractual licence, not CC or public domain.\n"
     },
     {
       "id": "itu-datahub",
