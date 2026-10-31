@@ -28,9 +28,11 @@ status_since: '2026-10-31'
 status_source: curator
 observed:
   checked: '2026-10-31'
-  reachable: null
-  http_status: null
-  final_url: null
+  reachable: true
+  http_status: 200
+  final_url: https://docs.pypi.org/api/bigquery/
+  redirect_chain: []
+  fingerprint_result: no-baseline
 coverage:
   spatial: global (downloads from and releases on pypi.org)
   temporal: not checked
