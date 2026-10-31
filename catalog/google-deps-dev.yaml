@@ -1,0 +1,44 @@
+id: google-deps-dev
+type: dataset
+title: deps.dev Open Source Insights Dependency Graph
+description: |
+  Resolved dependency graphs, dependents, licences, advisories and project metadata for packages in npm, PyPI, Maven, Cargo, Go, NuGet and RubyGems, rebuilt by Google from the public registries and served through a web portal, a REST API and a BigQuery public dataset with full periodic snapshots. A company-run source with an explicit licence for the data it generates.
+publisher: Google LLC (Open Source Insights, deps.dev)
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- open-source-software
+- dependency-graphs
+- package-ecosystems
+- software-supply-chain
+- software-licences
+source:
+  canonical_url: https://docs.deps.dev/bigquery/v1/
+access:
+  method:
+  - web
+  - api
+  auth_required: false
+  auth_note: The REST API needs no key; the BigQuery dataset (bigquery-public-data.deps_dev_v1) needs a Google Cloud account (free sandbox tier, or billing for large queries)
+  rate_limit: null
+format:
+- json
+- bigquery
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (public package registries and their source repositories)
+  temporal: not checked
+  cadence: irregular
+license: CC-BY-4.0 for data deps.dev generates (resolved dependencies, advisory statistics, associations) (deps.dev BigQuery and API docs, data-specific statement); aggregated upstream registry, repository and advisory data stays under its sources' own terms
+attribution: deps.dev (Open Source Insights), Google; credit upstream sources (registries, GitHub/GitLab, OSV.dev, OpenSSF Scorecard) for their data
+notes: |
+  Human-verified 2026-10-31: HTTP 200. The BigQuery documentation page says "The deps.dev BigQuery dataset provides signals that both maintainers and consumers of open-source software (OSS) can use to improve the health of their software. The dataset is provided as a BigQuery public dataset", and its sample queries read from `bigquery-public-data.deps_dev_v1.PackageVersionsLatest`. Tables listed include Advisories, Dependencies, DependencyGraphEdges, Dependents, per-ecosystem Requirements tables, PackageVersions, Projects and Snapshots ("the timestamps for which a full snapshot of all other tables exists"). The portal https://deps.dev/ also answered HTTP 200 but renders only with JavaScript ("You need to enable JavaScript to run this app"), so the docs page is catalogued instead. The API (documented at https://docs.deps.dev/api/v3/) answered HTTP 200 to an unauthenticated GET for the PyPI package "requests". The FAQ says the service "is hosted on Google Cloud Platform" and contact is depsdev@google.com; the platform "is not open source". Google is a company; jurisdiction national/US records its legal seat only. No BigQuery query was run, so the snapshot frequency and the earliest snapshot are unknown. Cadence "irregular" is a placeholder: BigQuery holds periodic full snapshots listed in a Snapshots table, frequency not checked.
+  Licence checked 2026-10-31: the "Data" section of the BigQuery page (and the same text on the API v3 page) lists the upstream sources (crates.io, Go module mirror, Maven Central, npm Registry, NuGet, PyPI, RubyGems, GitHub, GitLab, Bitbucket, OSV.dev, OpenSSF Scorecard, OSS-Fuzz) and says "For details on using the data from these sources, please consult their documentation. As well as aggregating data, deps.dev generates additional data, including resolved dependencies, advisory statistics, associations between entities, etc. This generated data is available under a CC-BY 4.0 license." The API page adds "Use of the deps.dev API is subject to the Google API Terms of Service. Clients are expressly permitted to cache data served by the API." So CC-BY-4.0 covers only the generated layer, not the upstream metadata itself.

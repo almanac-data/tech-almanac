@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 22,
+  "count": 23,
   "by_status": {
-    "live": 22
+    "live": 23
   },
   "entries": [
     {
@@ -538,6 +538,57 @@
       "license": "unverified — no licence stated for the event archives; the project's README licenses its code (MIT) and website text (CC-BY-4.0) only and says the dataset \"includes material that may be subject to third party rights\"",
       "attribution": "GH Archive (www.gharchive.org)",
       "notes": "Human-verified 2026-10-31: HTTP 200. The home page says \"GH Archive is a project to record the public GitHub timeline, archive it, and make it easily accessible for further analysis\", that events \"are aggregated into hourly archives\" at URLs like https://data.gharchive.org/2015-01-01-15.json.gz, that \"Activity archives are available starting 2/12/2011\", and that \"The entire GH Archive is also available as a public dataset on Google BigQuery: the dataset is automatically updated every hour\". A HEAD request for https://data.gharchive.org/2026-10-30-15.json.gz returned HTTP 200, so recent hours are being written. The site footer links only to github.com/igrigorik/gharchive.org; GH Archive is a long-running independent project, not a company product or a national agency, so jurisdiction international-ngo/null is the nearest schema value rather than a claim about a legal entity. The BigQuery dataset was not queried. Cadence is recorded as \"daily\" because the schema has no hourly value; files are written hourly.\nLicence checked 2026-10-31: no licence appears on www.gharchive.org. The repository README (https://raw.githubusercontent.com/igrigorik/gharchive.org/master/README.md) says \"MIT, for code and documentation in this repository\" and \"www.gharchive.org website content (gh-pages branch) is also released under CC-BY-4.0\", then \"Note this repository does _not_ contain the GH Archive dataset (event archives/data). The dataset includes material that may be subject to third party rights.\" The events themselves are GitHub API output about GitHub users' public activity, so GitHub's own terms and the users' rights may apply; this was not researched further. Treat re-use terms as unknown.\n"
+    },
+    {
+      "id": "google-deps-dev",
+      "type": "dataset",
+      "title": "deps.dev Open Source Insights Dependency Graph",
+      "description": "Resolved dependency graphs, dependents, licences, advisories and project metadata for packages in npm, PyPI, Maven, Cargo, Go, NuGet and RubyGems, rebuilt by Google from the public registries and served through a web portal, a REST API and a BigQuery public dataset with full periodic snapshots. A company-run source with an explicit licence for the data it generates.\n",
+      "publisher": "Google LLC (Open Source Insights, deps.dev)",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "open-source-software",
+        "dependency-graphs",
+        "package-ecosystems",
+        "software-supply-chain",
+        "software-licences"
+      ],
+      "source": {
+        "canonical_url": "https://docs.deps.dev/bigquery/v1/"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": "The REST API needs no key; the BigQuery dataset (bigquery-public-data.deps_dev_v1) needs a Google Cloud account (free sandbox tier, or billing for large queries)",
+        "rate_limit": null
+      },
+      "format": [
+        "json",
+        "bigquery"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (public package registries and their source repositories)",
+        "temporal": "not checked",
+        "cadence": "irregular"
+      },
+      "license": "CC-BY-4.0 for data deps.dev generates (resolved dependencies, advisory statistics, associations) (deps.dev BigQuery and API docs, data-specific statement); aggregated upstream registry, repository and advisory data stays under its sources' own terms",
+      "attribution": "deps.dev (Open Source Insights), Google; credit upstream sources (registries, GitHub/GitLab, OSV.dev, OpenSSF Scorecard) for their data",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The BigQuery documentation page says \"The deps.dev BigQuery dataset provides signals that both maintainers and consumers of open-source software (OSS) can use to improve the health of their software. The dataset is provided as a BigQuery public dataset\", and its sample queries read from `bigquery-public-data.deps_dev_v1.PackageVersionsLatest`. Tables listed include Advisories, Dependencies, DependencyGraphEdges, Dependents, per-ecosystem Requirements tables, PackageVersions, Projects and Snapshots (\"the timestamps for which a full snapshot of all other tables exists\"). The portal https://deps.dev/ also answered HTTP 200 but renders only with JavaScript (\"You need to enable JavaScript to run this app\"), so the docs page is catalogued instead. The API (documented at https://docs.deps.dev/api/v3/) answered HTTP 200 to an unauthenticated GET for the PyPI package \"requests\". The FAQ says the service \"is hosted on Google Cloud Platform\" and contact is depsdev@google.com; the platform \"is not open source\". Google is a company; jurisdiction national/US records its legal seat only. No BigQuery query was run, so the snapshot frequency and the earliest snapshot are unknown. Cadence \"irregular\" is a placeholder: BigQuery holds periodic full snapshots listed in a Snapshots table, frequency not checked.\nLicence checked 2026-10-31: the \"Data\" section of the BigQuery page (and the same text on the API v3 page) lists the upstream sources (crates.io, Go module mirror, Maven Central, npm Registry, NuGet, PyPI, RubyGems, GitHub, GitLab, Bitbucket, OSV.dev, OpenSSF Scorecard, OSS-Fuzz) and says \"For details on using the data from these sources, please consult their documentation. As well as aggregating data, deps.dev generates additional data, including resolved dependencies, advisory statistics, associations between entities, etc. This generated data is available under a CC-BY 4.0 license.\" The API page adds \"Use of the deps.dev API is subject to the Google API Terms of Service. Clients are expressly permitted to cache data served by the API.\" So CC-BY-4.0 covers only the generated layer, not the upstream metadata itself.\n"
     },
     {
       "id": "itu-datahub",
