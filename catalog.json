@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 14,
+  "count": 15,
   "by_status": {
-    "live": 14
+    "live": 15
   },
   "entries": [
     {
@@ -725,6 +725,57 @@
       "license": "unverified — the OECD.AI footer reads \"© 2026 OECD. All rights reserved\" and links OECD Terms and Conditions (oecd.org), which sat behind a Cloudflare challenge and could not be read",
       "attribution": "OECD.AI (2025), OECD.AI Policy Navigator, accessed on <dd/mm/yyyy>, https://oecd.ai/dashboards",
       "notes": "Human-verified 2026-10-31: HTTP 200 (plain curl returns 200 but the page is a JavaScript app; content read in headless Chromium). The page says \"Our policy navigator is a living repository from more than 80 jurisdictions and organisations\" and \"The navigator is a live database updated regularly by official contact points from countries and international organisations and OECD.AI experts.\" The All initiatives view (https://oecd.ai/en/dashboards/policy-initiatives) showed \"List of policy initiatives (2637)\" with filters for country, international organisation, category, status, legally binding, start year, type, AI principles, target sectors and AI tags. It gives the citation \"Please cite as: OECD.AI (2025), OECD.AI Policy Navigator, accessed on 31/10/2026, https://oecd.ai/dashboards.\" No bulk download, export button or API was found, so access is recorded as web only. OECD.AI's separate \"Live data\" section (https://oecd.ai/en/data) shows AI research, jobs, investment, compute and patent visualisations built largely on third-party sources (OpenAlex, Scopus and others) and is not covered by this entry.\nLicence checked 2026-10-31: the OECD.AI footer reads \"© 2026 OECD. All rights reserved\" and links \"Terms & conditions\" at https://www.oecd.org/termsandconditions/. That page, and https://www.oecd.org/en/about/terms-conditions.html, returned a Cloudflare \"Performing security verification\" page (HTTP 403) to headless Chromium this session. Another Almanac entry (labor-almanac oecd-employment-labour-market) quotes those terms as allowing reuse of OECD Data \"for any purpose, even for commercial use\" with credit, but whether that covers policy-database entries submitted by national contact points was not confirmed, so the licence is left unverified.\n"
+    },
+    {
+      "id": "oecd-broadband-telecom-database",
+      "type": "dataset",
+      "title": "OECD Broadband and Telecom Databases",
+      "description": "OECD's broadband and telecommunications statistics for member and accession countries: fixed and mobile broadband subscriptions by technology and speed tier, and related telecom indicators collected from national authorities. They are the comparative series behind the OECD Broadband Portal.\n",
+      "publisher": "OECD (Organisation for Economic Co-operation and Development)",
+      "jurisdiction": {
+        "scope": "multilateral",
+        "country": null
+      },
+      "topics": [
+        "broadband",
+        "telecommunications",
+        "mobile",
+        "connectivity",
+        "international-comparison"
+      ],
+      "source": {
+        "canonical_url": "https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "csv",
+        "sdmx"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "OECD member and accession countries",
+        "temporal": "varies by indicator",
+        "cadence": "quarterly"
+      },
+      "license": "unverified — OECD terms page (oecd.org/en/about/terms-conditions.html) is behind a Cloudflare bot challenge and could not be read",
+      "attribution": "OECD, Broadband and telecom databases (OECD Data Explorer)",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (curl). The Data Explorer is a JavaScript app and was read in headless Chromium, titled \"OECD Data Explorer • Broadband and telecom databases\". It says \"This dataset represents a selection of 14 indicators, based on questionnaires received by the OECD from relevant national authorities of OECD members and accession countries\", with \"Number of unfiltered data points: 69634\" and \"Last updated: October 13, 2026\". The default view is quarterly subscriptions. The SDMX API (https://sdmx.oecd.org/public/rest/dataflow/OECD.STI.DEP/DSD_BB_DATABASE@DF_BB_TEL_DATABASE/latest) answered HTTP 200 for dataflow version 2.0. The same API also lists related OECD.STI.DEP flows, \"ICT Access and Usage by Households\", \"...by Individuals\" and \"...by Businesses\", which aren't cataloged separately. The OECD Broadband Portal pages on www.oecd.org (https://www.oecd.org/en/topics/sub-issues/broadband-statistics.html) returned a Cloudflare \"Performing security verification\" page (HTTP 403) to curl and headless Chromium, so this entry points to the Data Explorer instead. The formats are taken from the Download and Developer API buttons and weren't tested. The canonical URL's square brackets are percent-encoded.\nLicence checked 2026-10-31: not verified. The Data Explorer footer links \"Terms & conditions\" to https://www.oecd.org/en/about/terms-conditions.html, which returned a Cloudflare 403 to headless Chromium and WebFetch this session. The labor-almanac oecd-employment-labour-market entry, checked the same day, quotes that page's \"3. Data\" section as permitting reuse \"for any purpose, even for commercial use\" with credit to the OECD, and says it is not CC BY 4.0. I did not read it myself, so no licence is asserted here.\n"
     }
   ]
 }
