@@ -1,0 +1,44 @@
+id: ripe-ncc-ripe-atlas
+type: dataset
+title: RIPE Atlas Internet Measurement Data
+description: |
+  Results of active Internet measurements (ping, traceroute, DNS, TLS/SSL, HTTP, NTP) run by the RIPE NCC's global network of RIPE Atlas probes and anchors, available through the RIPE Atlas API and as daily raw-data dumps.
+publisher: RIPE NCC (Réseaux IP Européens Network Coordination Centre)
+jurisdiction:
+  scope: international-ngo
+  country: null
+topics:
+- internet-measurement
+- network-performance
+- traceroute
+- dns
+- internet-infrastructure
+source:
+  canonical_url: https://atlas.ripe.net/
+access:
+  method:
+  - web
+  - api
+  - bulk
+  auth_required: false
+  auth_note: Public results can be read without an account; creating new measurements needs a RIPE NCC Access account and credits (not checked this session)
+  rate_limit: null
+format:
+- json
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (probe and anchor network, densest in the RIPE NCC service region of Europe, the Middle East and Central Asia)
+  temporal: daily dumps for roughly the last month (2026-09-30 to 2026-10-30 seen); API served 2025 results when tested, start year not checked
+  cadence: daily
+license: restricted — RIPE Atlas Service Terms and Conditions v3.5 (research and operational use; "Any commercial use of the RIPE Atlas Data is subject to prior permission by the RIPE NCC"); no open licence named
+attribution: RIPE NCC, RIPE Atlas
+notes: |
+  Human-verified 2026-10-31: HTTP 200 for https://atlas.ripe.net/ and for the RIPE NCC's RIPE Atlas page (https://www.ripe.net/analyse/internet-measurements/ripe-atlas/), whose menu lists "RIPE Atlas Raw Data" under "Raw Datasets". The daily-dump index https://data-store.ripe.net/datasets/atlas-daily-dumps/ returned HTTP 200 with folders 2026-09-30 through 2026-10-30 (latest written 31-Oct-2026); a folder holds hourly bz2 files per measurement type (e.g. "connection-2026-10-29T0000.bz2"). That index only goes back about a month, so it is a rolling window, not an archive. The RIPE NCC is the Amsterdam-based Regional Internet Registry and membership association, recorded as international-ngo. An unauthenticated API call (https://atlas.ripe.net/api/v2/measurements/1001/results/ for a one-hour window on 2025-10-31) returned HTTP 200 application/json with ping results, so the API serves results at least a year old; how far back it goes was not checked. The dump files were not decompressed, so their inner format is unconfirmed.
+  Licence checked 2026-10-31: RIPE Atlas Service Terms and Conditions, "Version 3.5, Updated 26 September 2025, Effective as of 4 November 2025" (https://www.ripe.net/about-us/legal/ripe-atlas-service-terms-and-conditions/). Article 4.1: "The RIPE NCC will publish the RIPE Atlas Data in various forms and make this available via http://www.ripe.net/ ... as well as the RIPE Atlas API." Article 4.5: "Users agree to make responsible use of the RIPE Atlas Data in line with the purposes of the RIPE Atlas Service ... Users may perform research using RIPE Atlas Data ... Any commercial use of the RIPE Atlas Data is subject to prior permission by the RIPE NCC." Article 3.1 gives the purposes as "research, network monitoring, network debugging and alerting about network events". No Creative Commons or other open licence was found. RIPEstat, a separate RIPE NCC service, has stricter terms (no redistribution) and is not covered here.
