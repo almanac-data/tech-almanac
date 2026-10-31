@@ -1,0 +1,44 @@
+id: cran-package-metadata
+type: dataset
+title: CRAN Package Repository Metadata
+description: |
+  Machine-readable indexes of all packages on CRAN, the Comprehensive R Archive Network (DESCRIPTION fields such as version, licence, dependencies, maintainer and publication date, in packages.rds and the PACKAGES index), alongside daily check results and the archive of past versions. The authoritative record of the R package ecosystem.
+publisher: CRAN team (Comprehensive R Archive Network), with resources of the R Foundation and WU Wien
+jurisdiction:
+  scope: international-ngo
+  country: null
+topics:
+- open-source-software
+- package-ecosystems
+- r
+- software-metadata
+source:
+  canonical_url: https://cran.r-project.org/web/packages/
+access:
+  method:
+  - web
+  - bulk
+  auth_required: false
+  auth_note: null
+  rate_limit: null
+format:
+- rds
+- dcf
+- html
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (packages submitted to CRAN)
+  temporal: current packages in the indexes; earlier versions in the Archive directory; start year not checked
+  cadence: daily
+license: unverified — no licence or terms found for CRAN's own metadata files; each package carries its own licence in its DESCRIPTION file
+attribution: CRAN, the Comprehensive R Archive Network (https://CRAN.R-project.org)
+notes: |
+  Human-verified 2026-10-31: HTTP 200. The page says "Currently, the CRAN package repository features 25610 available packages", links tables "sorted by date of publication" and "by name", "CRAN Task Views" ("Currently, 50 views are available"), check results, and the "Archive" of "Previous versions of the packages". HEAD requests returned HTTP 200 for https://cran.r-project.org/web/packages/packages.rds (12,699,068 bytes, last-modified Sat, 31 Oct 2026 21:30:28 GMT) and https://cran.r-project.org/src/contrib/PACKAGES.gz (1,965,157 bytes, same evening). Their field lists were not opened; packages.rds is an R serialised data frame and PACKAGES is Debian control (DCF) format. The CRAN Repository Policy (https://cran.r-project.org/web/packages/policies.html) says "CRAN is maintained by the efforts of volunteers (the "CRAN team") and the resources of the R Foundation and the employers of those volunteers (WU Wien, TU Dortmund, U Oxford, U Auckland)". The R Foundation is based in Vienna, but CRAN is a volunteer, multi-institution network, so it is recorded as international-ngo. The CRAN mirror network and download logs (e.g. the RStudio/Posit CRAN mirror logs) are not part of this entry. Cadence "daily" is a floor: the index files were regenerated on the day of checking.
+  Licence checked 2026-10-31: none found. The Repository Policy addresses package licences ("The package's license must give the right for CRAN to distribute the package in perpetuity") but says nothing about re-use of CRAN's index or metadata files, and no terms page was found on cran.r-project.org. The metadata is largely author-supplied DESCRIPTION text, including maintainer names and email addresses.
