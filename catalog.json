@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 30,
+  "count": 29,
   "by_status": {
-    "live": 30
+    "live": 29
   },
   "entries": [
     {
@@ -1259,58 +1259,6 @@
       "license": "restricted — RIPE Atlas Service Terms and Conditions v3.5 (research and operational use; \"Any commercial use of the RIPE Atlas Data is subject to prior permission by the RIPE NCC\"); no open licence named",
       "attribution": "RIPE NCC, RIPE Atlas",
       "notes": "Human-verified 2026-10-31: HTTP 200 for https://atlas.ripe.net/ and for the RIPE NCC's RIPE Atlas page (https://www.ripe.net/analyse/internet-measurements/ripe-atlas/), whose menu lists \"RIPE Atlas Raw Data\" under \"Raw Datasets\". The daily-dump index https://data-store.ripe.net/datasets/atlas-daily-dumps/ returned HTTP 200 with folders 2026-09-30 through 2026-10-30 (latest written 31-Oct-2026); a folder holds hourly bz2 files per measurement type (e.g. \"connection-2026-10-29T0000.bz2\"). That index only goes back about a month, so it is a rolling window, not an archive. The RIPE NCC is the Amsterdam-based Regional Internet Registry and membership association, recorded as international-ngo. An unauthenticated API call (https://atlas.ripe.net/api/v2/measurements/1001/results/ for a one-hour window on 2025-10-31) returned HTTP 200 application/json with ping results, so the API serves results at least a year old; how far back it goes was not checked. The dump files were not decompressed, so their inner format is unconfirmed.\nLicence checked 2026-10-31: RIPE Atlas Service Terms and Conditions, \"Version 3.5, Updated 26 September 2025, Effective as of 4 November 2025\" (https://www.ripe.net/about-us/legal/ripe-atlas-service-terms-and-conditions/). Article 4.1: \"The RIPE NCC will publish the RIPE Atlas Data in various forms and make this available via http://www.ripe.net/ ... as well as the RIPE Atlas API.\" Article 4.5: \"Users agree to make responsible use of the RIPE Atlas Data in line with the purposes of the RIPE Atlas Service ... Users may perform research using RIPE Atlas Data ... Any commercial use of the RIPE Atlas Data is subject to prior permission by the RIPE NCC.\" Article 3.1 gives the purposes as \"research, network monitoring, network debugging and alerting about network events\". No Creative Commons or other open licence was found. RIPEstat, a separate RIPE NCC service, has stricter terms (no redistribution) and is not covered here.\n"
-    },
-    {
-      "id": "rust-foundation-crates-io-database-dumps",
-      "type": "dataset",
-      "title": "crates.io Database Dumps",
-      "description": "Daily PostgreSQL-ready CSV dumps of all public information in the crates.io database (crates, versions, dependencies, owners, categories, keywords and download counts), with archived per-version daily downloads back to November 2014. The complete registry record for the Rust package ecosystem.\n",
-      "publisher": "Rust Foundation (crates.io team)",
-      "jurisdiction": {
-        "scope": "international-ngo",
-        "country": null
-      },
-      "topics": [
-        "open-source-software",
-        "package-ecosystems",
-        "rust",
-        "package-downloads",
-        "dependency-graphs"
-      ],
-      "source": {
-        "canonical_url": "https://crates.io/data-access"
-      },
-      "access": {
-        "method": [
-          "bulk",
-          "api"
-        ],
-        "auth_required": false,
-        "auth_note": null,
-        "rate_limit": "API: \"A maximum of 1 request per second\" plus an identifying User-Agent; no limits stated for the sparse index or static.crates.io"
-      },
-      "format": [
-        "csv",
-        "sql",
-        "tar.gz"
-      ],
-      "status": "live",
-      "status_since": "2026-10-31",
-      "status_source": "curator",
-      "observed": {
-        "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
-      },
-      "coverage": {
-        "spatial": "global (all crates published to crates.io)",
-        "temporal": "full registry history in each dump; historical version downloads back to November 2014 (per the dump README)",
-        "cadence": "daily"
-      },
-      "license": "unverified — no licence for the dump data found on the Data Access Policy page or in the dump's README; the crates.io Usage Policy is CC-BY-4.0 but that covers the policy text, not the data",
-      "attribution": "crates.io database dump, Rust Foundation / crates.io team (<dump timestamp, e.g. 2026-10-31-020010>)",
-      "notes": "Human-verified 2026-10-31: HTTP 200 in headless Chromium; plain curl got HTTP 403 (and 404 with a minimal browser User-Agent), because crates.io is a JavaScript app behind bot filtering, so the vertical's headless check is needed. The Data Access Policy page says \"crates.io database dumps contain all information available through the crates.io API in a single download. They are updated every 24 hours. The latest dump is available at the address https://static.crates.io/db-dump.tar.gz.\" That URL redirects (307) to https://cloudfront-static.crates.io/db-dump.tar.gz, which answered HTTP 200 with content-length 2,118,275,837 and last-modified Sat, 31 Oct 2026 02:06:53 GMT. The first 3 MB were read: the archive root is \"2026-10-31-020010/\" with README.md, metadata.json (timestamp \"2026-10-31T02:00:10Z\"), schema.sql, import.sql and data/*.csv (categories, crate_downloads, crates, ...). The README says the live version_downloads table covers 90 days and \"All available historical data (back to November 2014) ... is available at https://static.crates.io/archive/version-downloads/ in CSV form\", and warns that CSV fields contain user-supplied text unmodified. The page also documents the sparse index (index.crates.io), RSS feeds and the API. The Usage Policy names \"the Rust Foundation as the official legal entity providing the crates.io service\"; the Foundation is US-registered and is recorded as international-ngo, like other foundation-run global registries in this vertical.\nLicence checked 2026-10-31: none found. The Data Access Policy page (https://crates.io/data-access) states access rules and rate limits but no licence; the dump README has no licence section; the Usage Policy (https://crates.io/policies) ends \"Licensed under the Creative Commons Attribution 4.0 International license\", which applies to that policy document. Crate metadata is author-submitted, and the dump includes user names and GitHub logins. Treat re-use terms as unstated. Not checked: the full CSV list beyond the first few files, and the dump changelog (GitHub issue #3617).\n"
     },
     {
       "id": "software-heritage-graph-dataset",
