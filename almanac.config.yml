@@ -5,20 +5,20 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Human-readable name, shown in the built catalog.json index.
-name: "Example Almanac"
+name: "Tech Almanac"
 
 # Short machine slug (kebab-case). Used in the link-checker User-Agent string.
-slug: "example-almanac"
+slug: "tech-almanac"
 
 # One-line description of this vertical, shown in catalog.json.
-description: "An open, versioned index of public example data."
+description: "An open, versioned index of public technology data."
 
 # This vertical's public home. Used as the contact URL in the link-checker
 # User-Agent so the agencies you probe can see who is checking their links.
-homepage: "https://github.com/almanac-data/example-almanac"
+homepage: "https://github.com/almanac-data/tech-almanac"
 
 # Free-text domain label (used in docs / discovery). e.g. climate, health, civic.
-domain: "example"
+domain: "tech"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Reachability monitoring options (optional — sensible defaults if omitted).
@@ -29,4 +29,4 @@ reachability:
   # Turn this on to verify them with a real headless Chromium in the daily
   # link-check. Requires Playwright (requirements-headless.txt); CI installs the
   # browser only when this is true. Leave false unless you catalog such sources.
-  headless: false
+  headless: true
