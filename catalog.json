@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 25,
+  "count": 26,
   "by_status": {
-    "live": 25
+    "live": 26
   },
   "entries": [
     {
@@ -901,6 +901,54 @@
       "license": "public-domain (US Gov work) for NIST's own content; CVE descriptions inside NVD records come from MITRE's CVE List under the CVE Terms of Use",
       "attribution": "National Institute of Standards and Technology, National Vulnerability Database. Services are asked to display: \"This product uses data from the NVD API but is not endorsed or certified by the NVD.\"",
       "notes": "Human-verified 2026-10-31: HTTP 200 (pages rendered with headless Chromium; plain curl to https://nvd.nist.gov/ also returned 200). The NVD Data Feeds page lists \"CVE and CPE APIs\", \"2.0 JSON Feeds\" (Vulnerability, CPE Dictionary and CPE Match feeds), translation feeds and vendor comments. It says \"The 'year' feeds are updated once per day, while the 'recent' and 'modified' feeds are updated every two hours\", and the CVE-Modified feed showed \"Oct 31, 2026; 4:00:08 PM +0000\" (GZ, 13.86 MB). The developers page (https://nvd.nist.gov/developers/start-here) gives the rate limits recorded above. A direct call to https://services.nvd.nist.gov/rest/json/cves/2.0 timed out after 20 seconds from this session, so the API itself was not confirmed. Not checked: the NIST Public Data Repository DOI for citation, and how far back the CVSS analysis goes.\nLicence checked 2026-10-31: the NVD developers page and the Data Feeds page say \"All NIST publications are available in the public domain according to Title 17 of the United States Code, however services which utilize or access the NVD are asked to display the following notice prominently within the application: 'This product uses data from the NVD API but is not endorsed or certified by the NVD.'\" The NVD General FAQ (https://nvd.nist.gov/general/faq-sections/general-faqs) repeats \"All NIST publications are available in the public domain.\" NIST is a federal agency, so its own analysis is a US Government work. NVD records also carry CVE text that MITRE licenses under the CVE Terms of Use (see mitre-cve-list), so re-users of full records should keep MITRE's notice too.\n"
+    },
+    {
+      "id": "npm-registry-replication-feed",
+      "type": "dataset",
+      "title": "npm Public Registry Metadata (Replication Feed)",
+      "description": "The full metadata of the npm public registry (every package document with its versions, dependencies, maintainers and timestamps), obtainable through npm's CouchDB-style replication endpoint and changes feed. The largest single package ecosystem; npm has no periodic bulk dump, so replication is the sanctioned route to the whole dataset.\n",
+      "publisher": "npm, Inc. (GitHub, Inc.)",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "open-source-software",
+        "package-ecosystems",
+        "javascript",
+        "software-metadata"
+      ],
+      "source": {
+        "canonical_url": "https://docs.npmjs.com/policies/crawlers/"
+      },
+      "access": {
+        "method": [
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": "Website crawlers: \"1 request per second or less\" (crawler policy); no limit stated for the replication endpoint"
+      },
+      "format": [
+        "json"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (all public packages on registry.npmjs.org)",
+        "temporal": "not checked",
+        "cadence": "daily"
+      },
+      "license": "npm Open Source Terms (last updated March 10, 2022): non-exclusive, non-transferable permission to use npm Open Source, including \"You may replicate data from the Public Registry using the Public APIs per this Agreement\"; not an open data licence; package contents keep their own licences",
+      "attribution": "npm public registry, npm, Inc.",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The \"Replication and web crawler policy\" page says \"npm's full public dataset is available via the public registry. Using CouchDB replication, you can get a full copy of all metadata, and it is acceptable within our terms of use to download copies of tarballs for inspection or experimentation\", and allows experimental website crawlers \"as long as they keep their request velocity to 1 request per second or less\". The replication host https://replicate.npmjs.com/ answered HTTP 200 with {\"db_name\":\"registry\",\"engine\":\"npm-replicate\",\"doc_count\":4554347,...}, and https://replicate.npmjs.com/_changes?limit=1 returned a changes-feed row (HTTP 200). The policy page is catalogued as the canonical URL because the replication host is a raw API root. The data lives at npm's own endpoints, not a mirror. The Open Source Terms say \"npm, Inc. (npm) operates each of those services\"; npm, Inc. is owned by GitHub (Microsoft), a company, so jurisdiction national/US records its legal seat only. Not checked: the replication API's documented parameters, whether a full replication is practical at this scale, and download-count endpoints (api.npmjs.org). Cadence \"daily\" is a placeholder: the changes feed is continuous.\nLicence checked 2026-10-31: npm Open Source Terms (https://docs.npmjs.com/policies/open-source-terms/), \"npm last updated these npm Open Source Terms on March 10, 2022\". They grant permission that \"is not exclusive to you, and you cannot transfer it to anyone else\", say \"You may replicate data from the Public Registry using the Public APIs per this Agreement\", and forbid automated access to the Website \"with a web crawler ... that is not a web browser\" beyond the crawler policy. This is a terms-of-service permission, not a licence that addresses redistribution of the metadata; re-publishing a derived dataset is not clearly covered.\n"
     },
     {
       "id": "ntia-internet-use-survey",
