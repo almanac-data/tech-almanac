@@ -1,0 +1,46 @@
+id: nist-nvd
+type: dataset
+title: NIST National Vulnerability Database (NVD)
+description: |
+  The US government repository of vulnerability management data built on the CVE List, adding NIST analysis such as CVSS severity scores, CWE weakness types and CPE product applicability, plus the CPE Dictionary and CPE Match data. Available through the CVE/CPE 2.0 APIs and JSON 2.0 data feeds.
+publisher: National Institute of Standards and Technology (NIST)
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- cybersecurity
+- vulnerabilities
+- cve
+- cvss
+- cpe
+source:
+  canonical_url: https://nvd.nist.gov/vuln/data-feeds
+access:
+  method:
+  - web
+  - api
+  - bulk
+  auth_required: false
+  auth_note: Optional free API key raises the API rate limit
+  rate_limit: 5 requests per rolling 30 seconds without an API key, 50 with a key; NIST recommends sleeping six seconds between requests
+format:
+- json
+- gz
+- zip
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (vulnerabilities in products from any country)
+  temporal: yearly feeds from 2002 (the 2002 feed includes earlier CVEs) to present
+  cadence: daily
+license: public-domain (US Gov work) for NIST's own content; CVE descriptions inside NVD records come from MITRE's CVE List under the CVE Terms of Use
+attribution: 'National Institute of Standards and Technology, National Vulnerability Database. Services are asked to display: "This product uses data from the NVD API but is not endorsed or certified by the NVD."'
+notes: |
+  Human-verified 2026-10-31: HTTP 200 (pages rendered with headless Chromium; plain curl to https://nvd.nist.gov/ also returned 200). The NVD Data Feeds page lists "CVE and CPE APIs", "2.0 JSON Feeds" (Vulnerability, CPE Dictionary and CPE Match feeds), translation feeds and vendor comments. It says "The 'year' feeds are updated once per day, while the 'recent' and 'modified' feeds are updated every two hours", and the CVE-Modified feed showed "Oct 31, 2026; 4:00:08 PM +0000" (GZ, 13.86 MB). The developers page (https://nvd.nist.gov/developers/start-here) gives the rate limits recorded above. A direct call to https://services.nvd.nist.gov/rest/json/cves/2.0 timed out after 20 seconds from this session, so the API itself was not confirmed. Not checked: the NIST Public Data Repository DOI for citation, and how far back the CVSS analysis goes.
+  Licence checked 2026-10-31: the NVD developers page and the Data Feeds page say "All NIST publications are available in the public domain according to Title 17 of the United States Code, however services which utilize or access the NVD are asked to display the following notice prominently within the application: 'This product uses data from the NVD API but is not endorsed or certified by the NVD.'" The NVD General FAQ (https://nvd.nist.gov/general/faq-sections/general-faqs) repeats "All NIST publications are available in the public domain." NIST is a federal agency, so its own analysis is a US Government work. NVD records also carry CVE text that MITRE licenses under the CVE Terms of Use (see mitre-cve-list), so re-users of full records should keep MITRE's notice too.
