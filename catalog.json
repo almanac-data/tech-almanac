@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 17,
+  "count": 18,
   "by_status": {
-    "live": 17
+    "live": 18
   },
   "entries": [
     {
@@ -877,6 +877,54 @@
       "license": "unverified — the 2026 report PDF is \"licensed under Attribution-NoDerivatives 4.0 International\" (CC-BY-ND-4.0); no separate licence was found for the public data folder, much of which compiles third-party sources",
       "attribution": "Sajadieh, S., Fattorini, L., Perrault, R., Gil, Y., Parli, V., et al. \"The AI Index 2026 Annual Report,\" AI Index Steering Committee, Institute for Human-Centered AI, Stanford University, Stanford, CA, April 2026. https://doi.org/10.48550/arXiv.2606.15708",
       "notes": "Human-verified 2026-10-31: HTTP 200 (read in headless Chromium). The 2026 report page links \"Download the report\" (https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf, HTTP 200, about 38 MB) and \"Access the Public Data\", a Google Drive folder (https://drive.google.com/drive/folders/1zJTOg0iR0j5SijCwFutwWvDt143lW277) titled \"PUBLIC DATA: 2026 AI INDEX REPORT\" with \"Download all\" and nine chapter folders (\"1. Research and Development\" to \"9. Public Opinion\"), all dated Apr 8. Google Drive is only Stanford's hosting choice; the publisher is Stanford HAI. The PDF says \"The public data and high-resolution images of all the charts in the report are available on Google Drive.\" The AI Index landing page (https://hai.stanford.edu/ai-index) lists reports for 2017-2019 and 2021-2026. Stanford is a private university, not a government body; it is included as the one non-governmental AI source because the index is a research compilation, not company training or evaluation data. The file formats inside the chapter folders were not opened (only the PDF format is confirmed), and earlier editions' data links were not checked. Each new edition has a new URL, so this entry will need updating yearly.\nLicence checked 2026-10-31: the 2026 report PDF, \"How to Cite This Report\" page: \"The AI Index 2026 Annual Report by Stanford University is licensed under Attribution-NoDerivatives 4.0 International.\" That covers the report; no licence file or statement was seen for the Drive data folder, and the report draws on third-party data providers, so the data's licence is left unverified.\n"
+    },
+    {
+      "id": "statcan-canadian-internet-use-survey",
+      "type": "dataset",
+      "title": "Statistics Canada Canadian Internet Use Survey (CIUS)",
+      "description": "Canada's official survey of how residents aged 15 and over use the internet and digital technologies. It covers internet access and use, connected devices, e-commerce, government online services, digital skills, online security, privacy and trust, online work, AI adoption, and barriers to access.\n",
+      "publisher": "Statistics Canada",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "CA"
+      },
+      "topics": [
+        "internet-use",
+        "digital-skills",
+        "e-commerce",
+        "digital-divide",
+        "household-survey",
+        "canada"
+      ],
+      "source": {
+        "canonical_url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=4432"
+      },
+      "access": {
+        "method": [
+          "web"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "Canada (provinces; territories not covered)",
+        "temporal": "survey iterations including 2018, 2020 and 2022 (2022 latest seen)",
+        "cadence": "irregular"
+      },
+      "license": "Statistics Canada Open Licence",
+      "attribution": "Source: Statistics Canada, Canadian Internet Use Survey, <reference date>",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium), the survey's record page (record number 4432), \"Detailed information for 2022\", \"Status: Inactive\", \"Frequency: Occasional\", \"Data release - July 20, 2023; November 2, 2023\". It says the 2022 CIUS \"aims to measure the adoption and use of digital technologies by individual residents of Canada 15 years of age and over, living in the provinces\", and that \"The survey is built off the previous iterations of the CIUS, last conducted in 2018 and 2020.\" No reference period newer than 2022 was seen; \"Status: Inactive\" is read as applying to the 2022 cycle and was not confirmed to mean the survey has ended. The participant page https://www.statcan.gc.ca/en/survey/household/4432 (HTTP 200, modified 2024-07-18) also describes the 2022 cycle. The data tables live on www150.statcan.gc.ca, which reset the connection to curl this session, so the tables, the formats, the API and the start year weren't checked, and format is left empty.\nLicence checked 2026-10-31: the Statistics Canada Open Licence (https://www.statcan.gc.ca/en/terms-conditions/open-licence, HTTP 200) grants \"a worldwide, royalty-free, non-exclusive licence to: use, reproduce, publish, freely distribute, or sell the Information\", and requires the notice \"Source: Statistics Canada, name of product, reference date. Reproduced and distributed on an \"as is\" basis with the permission of Statistics Canada.\" The licence is confirmed.\n"
     }
   ]
 }
