@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv-dev/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Editors / OS
+.DS_Store
+
+# Fleet development overlay — local only, never published.
+# This wires the folder into the Willow fleet (MCP/Kart/memory) on the dev's
+# machine. It references machine-specific absolute paths and must not ship in a
+# public repo. See docs/DEVELOPMENT.md.
+.mcp.json
+.cursor/
+.willow/
+
+# Sibling-repo checkouts / symlinks at the repo root — local only.
+# Working on the fleet often means putting every vertical next to (or symlinked
+# into) this checkout so one agent session can see them all. That convenience is
+# fine; committing it is not. The paths are machine-specific and absolute, so a
+# committed symlink dangles for everyone else — and this repo is the template
+# every vertical is cloned from, so the mistake propagates by example.
+# Anchored to the root: catalog entries live in catalog/*.yaml and are unaffected.
+/*-almanac
+/almanac-template

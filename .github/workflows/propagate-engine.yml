@@ -1,0 +1,241 @@
+name: propagate-engine
+
+# Pushes engine files (schema, scripts, CI, deps) out to every vertical repo
+# whenever they change on main, opening one PR per vertical. Never auto-merges —
+# each vertical's own CI (also propagated) is the gate a human reviews before merge.
+#
+# Requires the willow-ci GitHub App (id 4749508) installed on almanac-data, plus
+# the org variable WILLOW_CI_APP_ID and the org secret WILLOW_CI_PRIVATE_KEY.
+#
+# It needs THREE permissions, not two: contents: write + pull-requests: write +
+# WORKFLOWS: WRITE. The engine payload below includes .github/workflows/ci.yml
+# and link-check.yml, and GitHub gates workflow files separately — a credential
+# without workflows:write checks out, copies and commits successfully, then
+# fails at push with "refusing to allow ... to create or update workflow ...
+# without `workflow` scope". Measured 2026-08-29, the hard way.
+# GITHUB_TOKEN cannot be used because it has no cross-repo write access.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - schema/catalog-entry.schema.json
+      - scripts/validate.py
+      - scripts/build_index.py
+      - scripts/check_links.py
+      - scripts/alert_on_dead_links.py
+      - scripts/migrate_v1_v2.py
+      - requirements.txt
+      - requirements-headless.txt
+      - pyproject.toml
+      - tests/test_catalog.py
+      - .github/workflows/ci.yml
+      - .github/workflows/link-check.yml
+      - .github/dependabot.yml
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  propagate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        vertical:
+          - agriculture-almanac
+          - civic-almanac
+          - climate-almanac
+          - economy-almanac
+          - education-almanac
+          - energy-almanac
+          - environment-almanac
+          - health-almanac
+          - housing-almanac
+          - justice-almanac
+          - labor-almanac
+          - population-almanac
+          - science-almanac
+          - transportation-almanac
+    steps:
+      - name: Checkout template
+        uses: actions/checkout@v7
+        with:
+          path: template
+
+      # Scoped to the VERTICAL, not this repo. create-github-app-token defaults
+      # to "the current repository" — here that would be almanac-template, and
+      # the push to the vertical would fail with a permissions error that looks
+      # nothing like the cause.
+      - name: Mint a willow-ci token for this vertical
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ vars.WILLOW_CI_APP_ID }}
+          private-key: ${{ secrets.WILLOW_CI_PRIVATE_KEY }}
+          owner: almanac-data
+          repositories: ${{ matrix.vertical }}
+
+      - name: Checkout vertical
+        uses: actions/checkout@v7
+        with:
+          repository: almanac-data/${{ matrix.vertical }}
+          token: ${{ steps.app-token.outputs.token }}
+          path: vertical
+
+      - name: Copy engine files
+        id: copy
+        env:
+          # Through env, never interpolated into the shell body — the matrix
+          # values are a controlled literal list, but the fleet's convention is
+          # that nothing reaches a `run:` block through ${{ }}.
+          VERTICAL: ${{ matrix.vertical }}
+        run: |
+          set -euo pipefail
+          paths=(
+            schema/catalog-entry.schema.json
+            scripts/validate.py
+            scripts/build_index.py
+            scripts/check_links.py
+            scripts/alert_on_dead_links.py
+            scripts/migrate_v1_v2.py
+            requirements.txt
+            requirements-headless.txt
+            pyproject.toml
+            tests/test_catalog.py
+            .github/workflows/ci.yml
+            .github/workflows/link-check.yml
+            .github/dependabot.yml
+          )
+
+          # Engine paths a specific vertical owns locally, as "vertical:path".
+          # MUST mirror LOCAL_OVERRIDES in the org meta-repo's
+          # scripts/propagate-engine.sh (almanac-data/almanac-data).
+          #
+          # That script has always honoured these; this workflow did not. The
+          # divergence was harmless only by accident: the manual script's copy
+          # list carries CONTRIBUTING.md, SCHEMA-V2.md and AGENTS.md and this
+          # one does not, so no overridden file was ever in reach. Adding a
+          # prose file to `paths` above would have silently overwritten a
+          # steward's work — the exact failure the script's own comment says
+          # this list exists to prevent.
+          #
+          # Two lists, one policy, and only one of them knew about the
+          # exception. If you add a path above, check it against this.
+          local_overrides=(
+            "climate-almanac:CONTRIBUTING.md"
+            "climate-almanac:AGENTS.md"
+          )
+
+          changed=0
+          for rel in "${paths[@]}"; do
+            src="template/$rel"
+            dst="vertical/$rel"
+            if printf '%s\n' "${local_overrides[@]}" | grep -qxF "${VERTICAL}:${rel}"; then
+              echo "LOCAL OVERRIDE, not propagated: ${VERTICAL}:${rel}"
+              continue
+            fi
+            if [[ ! -f "$src" ]]; then
+              echo "SKIP missing in template: $rel"
+              continue
+            fi
+            if [[ -f "$dst" ]] && cmp -s "$src" "$dst"; then
+              continue
+            fi
+            mkdir -p "$(dirname "$dst")"
+            cp "$src" "$dst"
+            echo "+ $rel"
+            changed=1
+          done
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      - name: Open PR
+        if: steps.copy.outputs.changed == '1'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          set -euo pipefail
+          cd vertical
+          branch="propagate-engine/${GITHUB_SHA::7}"
+          git checkout -B "$branch"
+          # Author as the App, so GitHub types the actor as a Bot.
+          # "almanac-engine-bot" was a string matching no account on GitHub, so
+          # a check written against that login would silently never fire — the
+          # failure BOT-INVENTORY's match-bot-by-type-not-login constraint
+          # names. The numeric id is looked up rather than pinned, because a
+          # noreply address only resolves to the bot user when it carries that
+          # user's own id.
+          slug="${{ steps.app-token.outputs.app-slug }}"
+          bot_id="$(gh api "/users/${slug}[bot]" --jq .id)"
+          git config user.name "${slug}[bot]"
+          git config user.email "${bot_id}+${slug}[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(engine): propagate changes from almanac-template@${GITHUB_SHA::7}"
+          git push -f origin "$branch"
+          if gh pr view "$branch" --repo "almanac-data/${{ matrix.vertical }}" >/dev/null 2>&1; then
+            echo "PR already open for $branch"
+          else
+            gh pr create \
+              --repo "almanac-data/${{ matrix.vertical }}" \
+              --title "chore(engine): propagate changes from almanac-template" \
+              --body "Automated propagation of engine files (schema, scripts, CI, deps) from almanac-data/almanac-template@${GITHUB_SHA}. This PR does not auto-merge — check the CI run below before merging. A schema change may require migrating existing catalog entries." \
+              --head "$branch" \
+              --base main
+          fi
+
+  # A propagation that fails silently is worse than no propagation: the engine
+  # keeps moving in the template while the verticals quietly stop receiving
+  # it, and nothing surfaces until someone diffs by hand. That happened — the
+  # ENGINE_PROPAGATION_TOKEN expired and every job died on "Bad credentials"
+  # for weeks with no signal.
+  #
+  # Deliberately on GITHUB_TOKEN, not the propagation PAT: the most likely
+  # thing to break IS that PAT, so an alert authenticated with it would be
+  # silent in exactly the case it exists to report.
+  alert-on-failure:
+    needs: [propagate]
+    if: failure()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Open or refresh the propagation-failure issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          title="propagate-engine is failing — verticals are not receiving engine changes"
+          body=$(printf '%s\n' \
+            "Propagation from \`almanac-template\` failed on commit \`${GITHUB_SHA}\`." \
+            "" \
+            "**The vertical repos are no longer receiving engine updates.** Any" \
+            "schema, script, CI, or test change merged here since this started has not" \
+            "reached them, and nothing else will surface that." \
+            "" \
+            "Failed run: ${RUN_URL}" \
+            "" \
+            "This now runs on the willow-ci App (id 4749508), whose tokens are minted" \
+            "per run and expire in an hour, so an expired credential is no longer the" \
+            "likely cause. Check instead: is the App still installed on almanac-data" \
+            "and on this vertical, and does it still hold contents:write," \
+            "pull-requests:write AND workflows:write? The engine payload includes" \
+            "workflow files, which GitHub gates separately." \
+            "" \
+            "This issue is reopened and updated by every failing run. It stays open" \
+            "until a propagation succeeds — closing it without fixing the cause just" \
+            "restores the silence.")
+          existing=$(gh issue list --repo "$REPO" --state all --label propagation-failure \
+                      --json number,state --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue reopen "$existing" --repo "$REPO" 2>/dev/null || true
+            gh issue comment "$existing" --repo "$REPO" --body "$body"
+            echo "refreshed issue #$existing"
+          else
+            gh label create propagation-failure --repo "$REPO" \
+              --color B60205 --description "propagate-engine could not reach the verticals" 2>/dev/null || true
+            gh issue create --repo "$REPO" --title "$title" --body "$body" --label propagation-failure
+          fi
