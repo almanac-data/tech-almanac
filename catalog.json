@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 10,
+  "count": 11,
   "by_status": {
-    "live": 10
+    "live": 11
   },
   "entries": [
     {
@@ -517,6 +517,58 @@
       "license": "CVE Terms of Use: perpetual, worldwide, royalty-free, irrevocable copyright licence to reproduce, adapt and distribute, on condition that MITRE's copyright designation and the licence are reproduced in copies (not a US Government work; not a named open licence)",
       "attribution": "Common Vulnerabilities and Exposures (CVE™), Copyright © 1999-2026, The MITRE Corporation (reproduce MITRE's copyright designation and the CVE Terms of Use licence in any copy)",
       "notes": "Human-verified 2026-10-31: HTTP 200 (www.cve.org is a JavaScript app; its content needed headless Chromium). The Downloads page says \"The CVE List is available for download in the format below, per the terms of use\" and that \"Bulk download files of CVE Records in the CVE Record Format are hosted in the cvelistV5 repository on GitHub.com\", with daily \"Year-Month-Day_all_CVEs_at_midnight.zip\" baselines and hourly delta zips; it notes legacy CSV, HTML, XML and CVRF downloads ended on June 30, 2024. The home page says \"There are currently over 398,000 CVE Records\". The GitHub repository (github.com/CVEProject/cvelistV5) is the program's own distribution point, not a mirror, but its release page returned HTTP 403 to this session, so the latest release was not confirmed. The CVE Services API was not checked. MITRE is a federally funded non-profit that runs the program under CISA sponsorship; jurisdiction national/US records that, although CNAs are worldwide.\nLicence checked 2026-10-31: CVE Terms of Use (https://www.cve.org/Legal/TermsOfUse), \"CVE Usage: MITRE hereby grants you a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, sublicense, and distribute Common Vulnerabilities and Exposures (CVE™). Any copy you make for such purposes is authorized provided that you reproduce MITRE's copyright designation and this license in any such copy.\" The footer reads \"Copyright © 1999-2026, The MITRE Corporation. CVE is a trademark ... of The MITRE Corporation.\" So CVE data is not public domain; the licence is permissive, with a notice-retention condition.\n"
+    },
+    {
+      "id": "mlab-measurement-lab",
+      "type": "dataset",
+      "title": "Measurement Lab (M-Lab) Open Internet Measurement Data",
+      "description": "Open Internet measurement data collected by the M-Lab platform worldwide: NDT speed tests (download, upload, round-trip time, packet loss), traceroute and reverse traceroute paths, TCP INFO, packet headers and Wehe traffic-differentiation tests, plus monthly global summary statistics.\n",
+      "publisher": "Measurement Lab (M-Lab)",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "internet-measurement",
+        "broadband-speed",
+        "network-performance",
+        "traceroute",
+        "traffic-differentiation"
+      ],
+      "source": {
+        "canonical_url": "https://www.measurementlab.net/data/"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api",
+          "bulk"
+        ],
+        "auth_required": false,
+        "auth_note": "Querying the enriched tables through Google BigQuery needs a Google Cloud account; M-Lab's own access steps were not checked",
+        "rate_limit": null
+      },
+      "format": [
+        "bigquery",
+        "pcap"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (measurements between end-user clients and M-Lab servers worldwide)",
+        "temporal": "NDT 2009-present; traceroute 2013-present; other datasets from 2018-2024 onwards",
+        "cadence": "daily"
+      },
+      "license": "CC0-1.0 (M-Lab Data Catalog, \"Data License and Citing M-Lab Data\")",
+      "attribution": "The M-Lab <test name> Data Set, <date range used>. <M-Lab test URL> (e.g. \"The M-Lab NDT Data Set 2009-02-11–2015-12-21. https://measurementlab.net/tests/ndt\")",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The Data Catalog page says \"Open Internet measurement data released under CC0\" and that data is published as \"enriched data (parsed, annotated, and queryable via BigQuery or available as pre-computed summaries) and archival data (measurement logs on Google Cloud Storage)\". It lists Monthly Global Stats (2009 – present), NDT (2009 – present), Packet Header (2019 – present), Reverse Traceroute (2024 – present), TCP INFO (2019 – present), Traceroute (2013 – present) and Wehe (2018 – present), most marked \"Continuous\". The publisher is M-Lab itself, which describes itself as \"a fiscally sponsored project of Superbloom Design\" (US) led by researchers with partner companies and institutions; jurisdiction is recorded as international-ngo because it runs a global platform and is not a government agency. Cadence \"daily\" stands in for continuous collection.\nLicence checked 2026-10-31: the same page (https://www.measurementlab.net/data/) states \"All data collected by M-Lab tests are available to the public without restriction under a No Rights Reserved Creative Commons Zero Waiver\" and that both enriched and archival data \"are released under CC0 1.0 Universal\". This is a data-specific statement; the site footer's CC-BY-4.0 covers original website material, not the data. Not checked: the BigQuery table names, the raw-archive file formats beyond the .pcap packet-header files, the summary download formats, and any rate limits.\n"
     }
   ]
 }
