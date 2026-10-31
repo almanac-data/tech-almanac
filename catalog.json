@@ -1,11 +1,61 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 1,
+  "count": 2,
   "by_status": {
-    "live": 1
+    "live": 2
   },
   "entries": [
+    {
+      "id": "caida-internet-datasets",
+      "type": "dataset",
+      "title": "CAIDA Internet Measurement Datasets",
+      "description": "The dataset collection of the Center for Applied Internet Data Analysis (CAIDA) at UC San Diego: Internet topology (Ark traceroute, ITDK), BGP-derived AS relationships and prefix-to-AS mappings, network telescope and anonymized passive traces, among others. Some are public; many need an approved request.\n",
+      "publisher": "Center for Applied Internet Data Analysis (CAIDA), University of California San Diego",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "internet-measurement",
+        "internet-topology",
+        "bgp",
+        "autonomous-systems",
+        "network-telescope"
+      ],
+      "source": {
+        "canonical_url": "https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk"
+        ],
+        "auth_required": true,
+        "auth_note": "Publicly accessible datasets download under the Public AUA; most other datasets need a data request approved by CAIDA under the Master AUA (one-year licence, CAIDA may refuse). Per-dataset access level is shown in the catalog",
+        "rate_limit": null
+      },
+      "format": [
+        "text"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global Internet (topology, routing and traffic observed from CAIDA vantage points)",
+        "temporal": "varies by dataset (e.g. pfx2as daily from 2005-05-09 for IPv4, 2007-01-01 for IPv6)",
+        "cadence": "irregular"
+      },
+      "license": "restricted — CAIDA Acceptable Use Agreements: Public AUA (limited, non-exclusive, terminable licence; citation and publication reporting required) or Master AUA (non-profit research/education, commercial internal evaluation, or US Government purposes only)",
+      "attribution": "The CAIDA UCSD [Dataset Name] - [dates used], https://catalog.caida.org/dataset/[dataset-URL]",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (needed headless Chromium to render the listing). The old address https://www.caida.org/catalog/datasets/ redirects here. The catalog search page shows \"Displaying 116 of 116\" datasets with an Access filter (11 values) and a Status filter (84 \"complete\"). A sample dataset page, Routeviews Prefix to AS mappings (https://www.caida.org/catalog/datasets/routeviews-prefix2as/, HTTP 200), says \"Files are created on a daily basis, starting from 2005-05-09 for IPv4 and 2007-01-01 for IPv6\" in a tab-separated, line-oriented format, and \"You are required to report your publications using this dataset to CAIDA.\" CAIDA is a research unit of UC San Diego (a university, not a federal agency), so this is not a US Government work. The \"text\" format reflects only the pfx2as sample; formats vary by dataset and were not surveyed. Cadence \"irregular\" because datasets update on different schedules.\nLicence checked 2026-10-31: the Master AUA (https://www.caida.org/about/legal/aua/) \"applies to the majority of the CAIDA datasets, with the exception of datasets covered by the Acceptable Use Agreement for Publicly Accessible Datasets (Public-AUA)\". It grants \"a limited, non-exclusive, non-transferable, non-assignable, and terminable license to copy, modify, and use the data ... solely for the purpose of non-profit research, non-profit education, commercial internal testing and evaluation of the data, or for government purposes by or on behalf of the U.S. Government\", effective \"for a period of one year\". The Public AUA (https://www.caida.org/about/legal/aua/public_aua/) grants \"a limited, non-exclusive, non-transferable, non-assignable, and terminable license to copy, modify, and use the data in accordance with this Public Agreement\" and requires the citation above plus reporting each publication to CAIDA. Neither is an open licence. Not checked: which datasets fall under which AUA, the request workflow, or any download limits.\n"
+    },
     {
       "id": "itu-datahub",
       "type": "dataset",
