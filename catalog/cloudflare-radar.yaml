@@ -1,0 +1,45 @@
+id: cloudflare-radar
+type: dataset
+title: Cloudflare Radar Internet Traffic and Security Data
+description: |
+  Aggregate Internet trends observed across Cloudflare's network, served through the Radar API: HTTP request and NetFlow traffic, application- and network-layer attacks, BGP anomalies, DNS, and domain rankings, by country and network. A company-run source with an explicit (non-commercial) data licence.
+publisher: Cloudflare, Inc. (Cloudflare Radar)
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- internet-measurement
+- internet-traffic
+- ddos-attacks
+- bgp
+- dns
+- domain-rankings
+source:
+  canonical_url: https://developers.cloudflare.com/radar/
+access:
+  method:
+  - web
+  - api
+  auth_required: true
+  auth_note: Free Cloudflare API token with Account > Radar > Read permission ("you must obtain your API token first")
+  rate_limit: null
+format:
+- json
+- csv
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (traffic seen by Cloudflare's network; by country, region and autonomous system)
+  temporal: not checked
+  cadence: daily
+license: CC-BY-NC-4.0 (Cloudflare Radar developer documentation, data-specific statement)
+attribution: Cloudflare Radar
+notes: |
+  Human-verified 2026-10-31: HTTP 200 for the Radar developer documentation (https://developers.cloudflare.com/radar/), which says "Using Radar's API you can access Cloudflare's data on global Internet traffic. Radar's API is free, allowing academics, technology professionals, and other web enthusiasts to investigate Internet usage across the globe." Its menu lists HTTP requests, NetFlows, application- and network-layer attacks, BGP anomalies (Beta), DNS and Domains ranking. The public dashboard https://radar.cloudflare.com/ returned HTTP 403 to curl and to headless Chromium ("Performing security verification ... protect against malicious bots"), so the docs page is catalogued as the canonical URL; the link checker will likely also be challenged on the dashboard. "Make your first API request" (https://developers.cloudflare.com/radar/get-started/first-request/) says requests go to https://api.cloudflare.com/client/v4/radar/ with a Bearer token and shows format=json and format=csv parameters. Cloudflare is a commercial company, not a public body; jurisdiction national/US records its legal seat only, since the schema has no value for a company. Cadence "daily" is a placeholder; Radar data is near-real-time and the aggregation intervals were not checked. No API call was made (no token), so the history depth and rate limits are unknown.
+  Licence checked 2026-10-31: the same docs page states "Data available via Radar API endpoints is made available under the CC BY-NC 4.0 license." This is explicit and data-specific, but non-commercial; it was found on the developer docs, not on the radar.cloudflare.com dashboard, which could not be read.
