@@ -31,9 +31,11 @@ status_since: '2026-10-31'
 status_source: curator
 observed:
   checked: '2026-10-31'
-  reachable: null
-  http_status: null
-  final_url: null
+  reachable: true
+  http_status: 200
+  final_url: https://www.measurementlab.net/data/
+  redirect_chain: []
+  fingerprint_result: no-baseline
 coverage:
   spatial: global (measurements between end-user clients and M-Lab servers worldwide)
   temporal: NDT 2009-present; traceroute 2013-present; other datasets from 2018-2024 onwards

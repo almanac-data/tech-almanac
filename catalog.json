@@ -43,9 +43,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global Internet (topology, routing and traffic observed from CAIDA vantage points)",
@@ -94,9 +96,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (vulnerabilities in products from any country, exploitation observed worldwide)",
@@ -146,9 +150,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://developers.cloudflare.com/radar/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (traffic seen by Cloudflare's network; by country, region and autonomous system)",
@@ -199,9 +205,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://commoncrawl.org/get-started",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (public web pages fetched by CCBot)",
@@ -249,9 +257,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://euvd.enisa.europa.eu/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (ICT products and services), with an EU CSIRT coordination focus",
@@ -299,9 +309,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.epo.org/en/searching-for-patents/data/bulk-data-sets",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "European patents (EP), plus worldwide bibliographic and legal-event data from many patent offices (DOCDB, INPADOC)",
@@ -355,9 +367,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://ec.europa.eu/eurostat/web/digital-economy-and-society/database",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "EU member states (plus some EFTA and candidate countries)",
@@ -408,9 +422,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.first.org/epss/data",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (all scored CVEs)",
@@ -456,9 +472,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 202,
+        "final_url": "https://datahub.itu.int/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "Global (about 200 economies, plus world and regional aggregates)",
@@ -505,9 +523,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.cve.org/Downloads",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (vulnerabilities in products from any country)",
@@ -557,9 +577,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.measurementlab.net/data/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (measurements between end-user clients and M-Lab servers worldwide)",
@@ -610,9 +632,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://nvd.nist.gov/vuln/data-feeds",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (vulnerabilities in products from any country)",
@@ -664,9 +688,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "United States (national and state)",
@@ -713,9 +739,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://oecd.ai/en/dashboards/overview",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "more than 80 countries, territories and international organisations",
@@ -764,9 +792,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "OECD member and accession countries",
@@ -815,9 +845,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://atlas.ripe.net/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global (probe and anchor network, densest in the RIPE NCC service region of Europe, the Middle East and Central Asia)",
@@ -865,9 +897,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "global, with country comparisons",
@@ -913,9 +947,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=4432",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "Canada (provinces; territories not covered)",
@@ -966,9 +1002,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://data.uspto.gov/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "United States (USPTO filings, applicants worldwide)",
@@ -1014,9 +1052,11 @@
       "status_source": "curator",
       "observed": {
         "checked": "2026-10-31",
-        "reachable": null,
-        "http_status": null,
-        "final_url": null
+        "reachable": true,
+        "http_status": 200,
+        "final_url": "https://www3.wipo.int/ipstats/",
+        "redirect_chain": [],
+        "fingerprint_result": "no-baseline"
       },
       "coverage": {
         "spatial": "Global (national and regional IP offices; applicant origin countries)",

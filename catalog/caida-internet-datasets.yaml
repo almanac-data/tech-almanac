@@ -29,9 +29,11 @@ status_since: '2026-10-31'
 status_source: curator
 observed:
   checked: '2026-10-31'
-  reachable: null
-  http_status: null
-  final_url: null
+  reachable: true
+  http_status: 200
+  final_url: https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20
+  redirect_chain: []
+  fingerprint_result: no-baseline
 coverage:
   spatial: global Internet (topology, routing and traffic observed from CAIDA vantage points)
   temporal: varies by dataset (e.g. pfx2as daily from 2005-05-09 for IPv4, 2007-01-01 for IPv6)
