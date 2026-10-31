@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 4,
+  "count": 5,
   "by_status": {
-    "live": 4
+    "live": 5
   },
   "entries": [
     {
@@ -158,6 +158,59 @@
       "license": "CC-BY-NC-4.0 (Cloudflare Radar developer documentation, data-specific statement)",
       "attribution": "Cloudflare Radar",
       "notes": "Human-verified 2026-10-31: HTTP 200 for the Radar developer documentation (https://developers.cloudflare.com/radar/), which says \"Using Radar's API you can access Cloudflare's data on global Internet traffic. Radar's API is free, allowing academics, technology professionals, and other web enthusiasts to investigate Internet usage across the globe.\" Its menu lists HTTP requests, NetFlows, application- and network-layer attacks, BGP anomalies (Beta), DNS and Domains ranking. The public dashboard https://radar.cloudflare.com/ returned HTTP 403 to curl and to headless Chromium (\"Performing security verification ... protect against malicious bots\"), so the docs page is catalogued as the canonical URL; the link checker will likely also be challenged on the dashboard. \"Make your first API request\" (https://developers.cloudflare.com/radar/get-started/first-request/) says requests go to https://api.cloudflare.com/client/v4/radar/ with a Bearer token and shows format=json and format=csv parameters. Cloudflare is a commercial company, not a public body; jurisdiction national/US records its legal seat only, since the schema has no value for a company. Cadence \"daily\" is a placeholder; Radar data is near-real-time and the aggregation intervals were not checked. No API call was made (no token), so the history depth and rate limits are unknown.\nLicence checked 2026-10-31: the same docs page states \"Data available via Radar API endpoints is made available under the CC BY-NC 4.0 license.\" This is explicit and data-specific, but non-commercial; it was found on the developer docs, not on the radar.cloudflare.com dashboard, which could not be read.\n"
+    },
+    {
+      "id": "common-crawl",
+      "type": "dataset",
+      "title": "Common Crawl Web Crawl Archives",
+      "description": "Monthly open crawls of the public web (about 2 billion pages and over 100 TiB compressed per crawl) as raw WARC captures, WAT metadata and WET extracted text, with CDXJ/URL indexes and host- and domain-level web graphs. A widely cited snapshot series of the web itself.\n",
+      "publisher": "Common Crawl Foundation",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "web-crawl",
+        "internet-measurement",
+        "web-archive",
+        "web-graph"
+      ],
+      "source": {
+        "canonical_url": "https://commoncrawl.org/get-started"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk",
+          "s3"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "warc",
+        "wat",
+        "wet",
+        "cdxj"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (public web pages fetched by CCBot)",
+        "temporal": "monthly archives 2013-present on the archive index page (latest CC-MAIN-2026-43, October 2026); earlier crawls not checked",
+        "cadence": "monthly"
+      },
+      "license": "unverified — Common Crawl Terms of Use (rev. March 7, 2024) grant a \"limited, non-assignable, non-transferable, non-sublicensable, non-exclusive\" licence to use the Service; crawled pages \"may be subject to separate terms\" from their owners; no open data licence named",
+      "attribution": "Common Crawl Foundation, Common Crawl <crawl ID, e.g. CC-MAIN-2026-43>",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The Get Started page says the data \"is hosted by Amazon Web Services' Open Data Sets Sponsorships program on the bucket s3://commoncrawl/, located in the US-East-1 (Northern Virginia) AWS Region. You may process the data in the AWS cloud or download it for free over HTTP(S)\". The Latest Crawl page (https://commoncrawl.org/latest-crawl, HTTP 200) states \"The latest crawl is: CC-MAIN-2026-43\" and offers gzipped path lists of \"WARC, WAT and WET files\". The archive index (https://data.commoncrawl.org/crawl-data/index.html, HTTP 200), titled \"Common Crawl Archives 2013-2026\", says \"The archives of the main crawl are released on a monthly basis\" and lists CC-MAIN-2026-43 (October 2026, 2.16 billion pages, 109.20 TiB compressed). The site menu also lists a CDXJ Index, URL Index and Web Graphs; these were not opened. The Common Crawl Foundation is a US non-profit running a global crawl, recorded as international-ngo. The Internet Archive's Wayback CDX API was considered as a sibling entry but not written here.\nLicence checked 2026-10-31: Terms of Use, \"LAST UPDATED: March 7, 2024\" (https://commoncrawl.org/terms-of-use). \"1. LIMITED LICENSE CC grants you a limited, non-assignable, non-transferable, non-sublicensable, non-exclusive, limited license to access and use the Service subject to the terms and conditions of these ToU.\" It adds that the \"Crawled Content\" \"may be subject to separate terms of use or terms of service from the owners of such Crawled Content\", and lists prohibited uses (e.g. harvesting personal information, breaking the law). This is a service licence, not an open data licence, and the copyright in crawled pages stays with their owners, so re-users must check both. Not checked: rate limits on data.commoncrawl.org, the web-graph and index formats in detail, and the pre-2013 crawls.\n"
     },
     {
       "id": "itu-datahub",
