@@ -1,0 +1,44 @@
+id: gh-archive
+type: dataset
+title: GH Archive (Public GitHub Event Timeline)
+description: |
+  Hourly archives of every public GitHub event (pushes, forks, issues, pull requests, comments, releases and more) since February 2011, as gzipped JSON from the GitHub API and mirrored as a BigQuery public dataset. The standard raw source for studies of open-source developer activity.
+publisher: GH Archive (project maintained by Ilya Grigorik)
+jurisdiction:
+  scope: international-ngo
+  country: null
+topics:
+- open-source-software
+- developer-activity
+- github
+- code-hosting
+source:
+  canonical_url: https://www.gharchive.org/
+access:
+  method:
+  - web
+  - bulk
+  auth_required: false
+  auth_note: Hourly files need no account; the BigQuery copy ("githubarchive" dataset) needs a Google Cloud project (1 TB of query processing free per month)
+  rate_limit: null
+format:
+- json
+- gzip
+- bigquery
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (public activity on github.com)
+  temporal: 2011-02-12 to present (Timeline API to 2014-12-31, Events API from 2015-01-01)
+  cadence: daily
+license: unverified — no licence stated for the event archives; the project's README licenses its code (MIT) and website text (CC-BY-4.0) only and says the dataset "includes material that may be subject to third party rights"
+attribution: GH Archive (www.gharchive.org)
+notes: |
+  Human-verified 2026-10-31: HTTP 200. The home page says "GH Archive is a project to record the public GitHub timeline, archive it, and make it easily accessible for further analysis", that events "are aggregated into hourly archives" at URLs like https://data.gharchive.org/2015-01-01-15.json.gz, that "Activity archives are available starting 2/12/2011", and that "The entire GH Archive is also available as a public dataset on Google BigQuery: the dataset is automatically updated every hour". A HEAD request for https://data.gharchive.org/2026-10-30-15.json.gz returned HTTP 200, so recent hours are being written. The site footer links only to github.com/igrigorik/gharchive.org; GH Archive is a long-running independent project, not a company product or a national agency, so jurisdiction international-ngo/null is the nearest schema value rather than a claim about a legal entity. The BigQuery dataset was not queried. Cadence is recorded as "daily" because the schema has no hourly value; files are written hourly.
+  Licence checked 2026-10-31: no licence appears on www.gharchive.org. The repository README (https://raw.githubusercontent.com/igrigorik/gharchive.org/master/README.md) says "MIT, for code and documentation in this repository" and "www.gharchive.org website content (gh-pages branch) is also released under CC-BY-4.0", then "Note this repository does _not_ contain the GH Archive dataset (event archives/data). The dataset includes material that may be subject to third party rights." The events themselves are GitHub API output about GitHub users' public activity, so GitHub's own terms and the users' rights may apply; this was not researched further. Treat re-use terms as unknown.
