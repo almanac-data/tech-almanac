@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 23,
+  "count": 24,
   "by_status": {
-    "live": 23
+    "live": 24
   },
   "entries": [
     {
@@ -589,6 +589,59 @@
       "license": "CC-BY-4.0 for data deps.dev generates (resolved dependencies, advisory statistics, associations) (deps.dev BigQuery and API docs, data-specific statement); aggregated upstream registry, repository and advisory data stays under its sources' own terms",
       "attribution": "deps.dev (Open Source Insights), Google; credit upstream sources (registries, GitHub/GitLab, OSV.dev, OpenSSF Scorecard) for their data",
       "notes": "Human-verified 2026-10-31: HTTP 200. The BigQuery documentation page says \"The deps.dev BigQuery dataset provides signals that both maintainers and consumers of open-source software (OSS) can use to improve the health of their software. The dataset is provided as a BigQuery public dataset\", and its sample queries read from `bigquery-public-data.deps_dev_v1.PackageVersionsLatest`. Tables listed include Advisories, Dependencies, DependencyGraphEdges, Dependents, per-ecosystem Requirements tables, PackageVersions, Projects and Snapshots (\"the timestamps for which a full snapshot of all other tables exists\"). The portal https://deps.dev/ also answered HTTP 200 but renders only with JavaScript (\"You need to enable JavaScript to run this app\"), so the docs page is catalogued instead. The API (documented at https://docs.deps.dev/api/v3/) answered HTTP 200 to an unauthenticated GET for the PyPI package \"requests\". The FAQ says the service \"is hosted on Google Cloud Platform\" and contact is depsdev@google.com; the platform \"is not open source\". Google is a company; jurisdiction national/US records its legal seat only. No BigQuery query was run, so the snapshot frequency and the earliest snapshot are unknown. Cadence \"irregular\" is a placeholder: BigQuery holds periodic full snapshots listed in a Snapshots table, frequency not checked.\nLicence checked 2026-10-31: the \"Data\" section of the BigQuery page (and the same text on the API v3 page) lists the upstream sources (crates.io, Go module mirror, Maven Central, npm Registry, NuGet, PyPI, RubyGems, GitHub, GitLab, Bitbucket, OSV.dev, OpenSSF Scorecard, OSS-Fuzz) and says \"For details on using the data from these sources, please consult their documentation. As well as aggregating data, deps.dev generates additional data, including resolved dependencies, advisory statistics, associations between entities, etc. This generated data is available under a CC-BY 4.0 license.\" The API page adds \"Use of the deps.dev API is subject to the Google API Terms of Service. Clients are expressly permitted to cache data served by the API.\" So CC-BY-4.0 covers only the generated layer, not the upstream metadata itself.\n"
+    },
+    {
+      "id": "google-osv-dev",
+      "type": "dataset",
+      "title": "OSV Open Source Vulnerability Database",
+      "description": "An aggregated, machine-readable database of vulnerabilities in open-source packages, in the OSV schema, pulled from ecosystem advisory databases (GitHub, PyPI, Go, RustSec, Debian, Ubuntu, Red Hat and others) and enriched with exact affected versions and commits. The package-level counterpart to the CVE List and NVD.\n",
+      "publisher": "Google LLC (OSV.dev, Google open source security team)",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "cybersecurity",
+        "vulnerabilities",
+        "open-source-software",
+        "software-supply-chain",
+        "package-ecosystems"
+      ],
+      "source": {
+        "canonical_url": "https://osv.dev/"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api",
+          "bulk"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": "none (\"Currently there is not a limit on the API\", OSV FAQ); 32 MiB response limit over HTTP/1.1"
+      },
+      "format": [
+        "json",
+        "zip",
+        "csv"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (open-source packages across about 30 ecosystems and Linux distributions)",
+        "temporal": "not checked",
+        "cadence": "daily"
+      },
+      "license": "mixed per source — each upstream database keeps its own licence: CC-BY-4.0 (e.g. GitHub Advisory Database, PyPI, Go, OSS-Fuzz), CC0-1.0 (e.g. RustSec), MIT, Apache-2.0, BSD, CC-BY-SA-4.0 (Ubuntu, Alpine), CC-BY-NC-ND-4.0 (Chainguard/Wolfi) (OSV.dev \"Data sources\" page)",
+      "attribution": "OSV.dev, plus the upstream advisory database named in each record (database_specific.source), per that source's licence",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The home page reads \"A distributed vulnerability database for Open Source\" and lists per-ecosystem counts (e.g. \"npm 230252\", \"Debian 72451\", \"crates.io 2904\"). The docs (https://google.github.io/osv.dev/data/, HTTP 200) say the sources \"are aggregated and continuously exported to a GCS bucket maintained by OSV: gs://osv-vulnerabilities\", with a full \"all.zip\", per-ecosystem all.zip files (also over HTTPS, e.g. https://storage.googleapis.com/osv-vulnerabilities/PyPI/all.zip, which answered HTTP 200 to a HEAD request), and modified_id.csv change lists. The API is documented at google.github.io/osv.dev/api/; no API call was made. The project's code lives at github.com/google/osv.dev and its docs on google.github.io, so the operator is recorded as Google; the format itself is the \"OpenSSF Vulnerability format\" (the OSV schema is an OpenSSF project). Google is a company; jurisdiction national/US records its legal seat only. Some ecosystem rows (Debian, the NVD conversion) are converted by the OSV team rather than published natively in OSV format. Overlaps with the CVE List and NVD by alias, but is keyed on packages and versions. Cadence \"daily\" is a placeholder for continuous export.\nLicence checked 2026-10-31: there is no single licence for the database. The \"Data sources\" page (https://google.github.io/osv.dev/data/) lists each source with its licence, e.g. \"GitHub Advisory Database ( CC-BY 4.0 )\", \"Rust Advisory Database ( CC0 1.0 )\", \"Ubuntu ( CC-BY-SA 4.0 )\", \"Chainguard / Wolfi ( CC-BY-NC-ND 4.0 )\", \"Alpine SecDB ( CC-BY-SA 4.0 )\"; the Debian and NVD conversions have no licence stated on that page. The \"New Data Source\" page says a contributed source's licence \"must at minimum permit OSV.dev to ingest, index, modify (enrich), and publicly redistribute the records\". Re-users of all.zip therefore inherit a mix of licences, including share-alike and one non-commercial/no-derivatives source; filter by ecosystem if that matters. Not checked: start year of records, the BigQuery availability (if any), and the licence of the Debian conversion.\n"
     },
     {
       "id": "itu-datahub",
