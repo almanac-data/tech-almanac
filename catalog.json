@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 7,
+  "count": 8,
   "by_status": {
-    "live": 7
+    "live": 8
   },
   "entries": [
     {
@@ -311,6 +311,62 @@
       "license": "EPO terms and conditions for the licensing of EPO databases (licensed under contract with mandatory attribution; not an open licence)",
       "attribution": "This product contains data sourced from EPO databases, © European Patent Organisation",
       "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium), page \"Bulk data sets | epo.org\". It says \"The EPO's bulk data sets are bulk extractions from EPO-internal patent databases made available to external users for further processing\" and lists EP bibliographic data (EBD), the European Patent Register, EP full-text, DOCDB, INPADOC, sequence listings, national full-text data and Boards of Appeal decisions. The download platform, the Bulk Data Distribution Service (https://publication-bdds.apps.epo.org/raw-data/products, HTTP 200), needs an EPO account sign-in. Its public area listed \"14.7 EPO worldwide bibliographic data (DOCDB) - front file Published at: 30.10.2026\" and EP full-text data published 28.10.2026. The OPS page (https://www.epo.org/en/searching-for-patents/data/web-services/ops, HTTP 200) describes \"a web service which provides access to the EPO's data via a standardised XML interface\" and gives the conditions \"'Non-paying' users Up to 4 GB of data per week Free\" and \"More than 4 GB of data per week Annual subscription: EUR 2 800\". The page also points to PATSTAT for statistical analysis; PATSTAT is a separate paid product and is not cataloged here. Which bulk sets are free and which are priced was not checked, because the price list wasn't read. The XML format is assumed from the OPS documentation and DTD/Schema repository; individual product formats weren't checked.\nLicence checked 2026-10-31: \"Terms and conditions for the licensing of EPO databases\" (https://www.epo.org/en/service-support/ordering/raw-data-terms-and-conditions) says \"The EPO databases are available only on a subscription basis\" and \"Where online access to and downloading of the EPO databases is free of charge, no payment is due\". Licensees \"must not use any address data included in the EPO database for advertising, promotional, spamming or other commercial purposes\" and must include the statement \"This product contains data sourced from EPO databases, © European Patent Organisation\". The OPS terms (https://www.epo.org/en/service-support/ordering/terms-and-conditions/ops-terms-and-conditions) grant \"a non-exclusive, non-transferable, worldwide licence to access OPS and use the data obtained via OPS\", allow including the data in users' own products, and restrict making \"the data as such\" available. This is a contractual licence, not CC or public domain.\n"
+    },
+    {
+      "id": "eurostat-digital-economy-and-society-database",
+      "type": "dataset",
+      "title": "Eurostat Digital Economy and Society Database",
+      "description": "Eurostat's official EU statistics on the digital economy and society, drawn mainly from the harmonised ICT usage surveys of households, individuals and enterprises. They cover internet access and use, broadband, digital skills, e-commerce, e-government, and enterprises' use of cloud, AI and other digital technologies across member states.\n",
+      "publisher": "Eurostat (European Commission)",
+      "jurisdiction": {
+        "scope": "regional-bloc",
+        "country": null
+      },
+      "topics": [
+        "internet-use",
+        "broadband",
+        "digital-skills",
+        "e-commerce",
+        "ict-usage",
+        "europe"
+      ],
+      "source": {
+        "canonical_url": "https://ec.europa.eu/eurostat/web/digital-economy-and-society/database"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api",
+          "bulk"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "csv",
+        "tsv",
+        "xlsx",
+        "sdmx",
+        "json"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "EU member states (plus some EFTA and candidate countries)",
+        "temporal": "varies by dataset (individuals' internet use series from 2002)",
+        "cadence": "annual"
+      },
+      "license": "CC-BY-4.0 (Eurostat copyright notice and free re-use of data)",
+      "attribution": "Eurostat",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium), page \"Database - Digital economy and society - Eurostat\", with \"Comprehensive database\", \"Selected datasets\" and \"Detailed datasets\" trees and tabs for Visualisations, Methodology and Legislation. The tree is collapsed in the page text, so the subject list in the description follows Eurostat's usual ICT-survey structure and wasn't read item by item. As a spot check, the dissemination API (https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ci_ifp_iu) returned JSON \"Individuals - internet use\", updated 2026-04-17, with time labels 2002-2025 (EU27_2020 share of individuals using the internet in the last 12 months: 94.53 for the latest year). Other formats are taken from Eurostat's general dissemination services and weren't checked. The R&D, innovation and patent tables are cataloged in science-almanac (eurostat-science-technology-innovation-database) and aren't duplicated here.\nLicence checked 2026-10-31: Eurostat's copyright notice (https://ec.europa.eu/eurostat/help/copyright-notice) says \"The copyright for the editorial content of this website, which is owned by the EU, is licensed under the Creative Commons Attribution 4.0 International licence\" and \"Reuse of statistical data, metadata, publications, and other dissemination tools published on this website for commercial or non-commercial purposes is authorised provided the source is acknowledged.\" This matches the licence string used by the other Eurostat entries across the Almanac.\n"
     },
     {
       "id": "itu-datahub",
