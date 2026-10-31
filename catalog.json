@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 24,
+  "count": 25,
   "by_status": {
-    "live": 24
+    "live": 25
   },
   "entries": [
     {
@@ -692,6 +692,55 @@
       "license": "CC-BY-NC-SA-3.0-IGO (ITU DataHub Disclaimer and Terms of Use)",
       "attribution": "International Telecommunication Union, ITU DataHub, https://datahub.itu.int/ (with access date)",
       "notes": "Human-verified 2026-10-31: HTTP 202. Behind CloudFront: curl with a plain User-Agent got HTTP 403 (\"Request blocked\"), curl with a browser User-Agent got 202, and only headless Chromium rendered the page (title \"The world's richest source of ICT statistics and regulatory information - ITU DataHub\"), with Data explorer, Indicator catalogue and Data query sections. The About page describes \"ITU Household ICT Indicators\" and \"ITU World Telecommunication Indicators\" collections for \"about 200 economies worldwide\", collected through annual government questionnaires. The old database page (https://www.itu.int/en/ITU-D/Statistics/Pages/publications/wtid.aspx, HTTP 200) says \"The World Telecommunication/ICT Indicators Database was discontinued in 2024. All the data is now available free of charge on ITU DataHub subject to updated Terms of Use\", so the paid WTID is not cataloged separately. ITU's statistics page (https://www.itu.int/en/ITU-D/Statistics/Pages/stat/default.aspx) also offers global and regional Excel aggregates for 2005-2025. Download formats, any API, and start years weren't checked, so format is left empty. A Login link exists, but the query page loaded without one.\nLicence checked 2026-10-31: the DataHub About page (https://datahub.itu.int/about/#disclaimer-and-terms-of-use) says \"The Data is licensed to the public through a Creative Commons Attribution-Non-Commercial-ShareAlike 3.0 IGO license. Under the terms of this licence, you may copy, redistribute, and adapt the Data for non-commercial purposes, provided the work is appropriately cited.\" The \"terms of this licence\" link, however, points to https://creativecommons.org/licenses/by-nc/3.0/igo/ (BY-NC, without ShareAlike), so the ShareAlike term is uncertain. Third-party data on the DataHub follows its owners' terms. The data is non-commercial only.\n"
+    },
+    {
+      "id": "libraries-io-package-data",
+      "type": "dataset",
+      "title": "Libraries.io Open Source Package Data (API)",
+      "description": "Metadata on about 10 million open-source packages across dozens of package managers (versions, declared licences, dependencies, dependents, source repositories), scraped from public registries and served through a keyed REST API. A company-run source with an explicit CC-BY-SA-4.0 data licence; its former bulk open-data dumps are no longer offered on the site.\n",
+      "publisher": "Libraries.io (Tidelift, Inc.; site now branded Sonar, footer \"Copyright © 2026 SourceSource SA\")",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "open-source-software",
+        "package-ecosystems",
+        "dependency-graphs",
+        "software-licences"
+      ],
+      "source": {
+        "canonical_url": "https://libraries.io/api"
+      },
+      "access": {
+        "method": [
+          "api",
+          "web"
+        ],
+        "auth_required": true,
+        "auth_note": "Free Libraries.io account; every API request needs an api_key parameter",
+        "rate_limit": "60 requests/minute per API key (429 beyond that)"
+      },
+      "format": [
+        "json"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (public package registries)",
+        "temporal": "not checked",
+        "cadence": "irregular"
+      },
+      "license": "CC-BY-SA-4.0 (Libraries.io Terms and Conditions, \"Licensing of Libraries.io Data\", data-specific statement)",
+      "attribution": "\"includes data gathered by Libraries.io\" (publications) or \"powered by Libraries.io\" (services), per the Libraries.io terms",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The API page says \"All API requests must include api_key parameter\" and \"All requests are subject to a 60 request/minute rate limit based on your API key\"; its examples show recent data (an npm package's \"latest_stable_release_published_at\": \"2026-10-19\"). The home page says \"Libraries.io is a free service that collects publicly available open source package information scraped from the internet. With it you can search 9.96M packages\" and warns \"Data available via Libraries.io is scraped from the internet and not validated, corrected, or curated for accuracy\", pointing to the paid Tidelift offering. The old open-data page https://libraries.io/data now redirects (301) to the home page, so bulk dumps are no longer offered there; the last Zenodo release found (record 3626071, version 1.6.0, published 2020-01-12, licence cc-by-4.0) is frozen and is not catalogued here. Operator: the terms say \"The Libraries.io name and logos are the trademarks of Tidelift, Inc.\", while the footer reads \"Copyright © 2026 SourceSource SA\" (apparently a misspelling of SonarSource SA, Tidelift's parent; not verified) and links Sonar products. Jurisdiction national/US records Tidelift's seat only; it may be more accurate to treat the operator as Swiss. No API call was made (no key). Cadence \"irregular\" is a placeholder: data is continuously scraped, frequency not checked.\nLicence checked 2026-10-31: Terms and Conditions (https://libraries.io/terms), section \"Licensing of Libraries.io Data\": \"Data provided by the Service is licensed to you under version 4.0 of the Creative Commons Attribution, Share Alike license (CC BY-SA). This license grants permissive rights for users to use the data commercially...\" and \"You may comply with Sec. 3(1)(A)(i) of CC BY-SA by using the text 'includes data gathered by Libraries.io' in your publication or 'powered by Libraries.io' if providing a service.\" The footer repeats \"Data is available under CC-BY-SA 4.0 license\". Share-alike applies to derived datasets.\n"
     },
     {
       "id": "mitre-cve-list",
