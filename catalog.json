@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 20,
+  "count": 21,
   "by_status": {
-    "live": 20
+    "live": 21
   },
   "entries": [
     {
@@ -219,6 +219,57 @@
       "license": "unverified — Common Crawl Terms of Use (rev. March 7, 2024) grant a \"limited, non-assignable, non-transferable, non-sublicensable, non-exclusive\" licence to use the Service; crawled pages \"may be subject to separate terms\" from their owners; no open data licence named",
       "attribution": "Common Crawl Foundation, Common Crawl <crawl ID, e.g. CC-MAIN-2026-43>",
       "notes": "Human-verified 2026-10-31: HTTP 200. The Get Started page says the data \"is hosted by Amazon Web Services' Open Data Sets Sponsorships program on the bucket s3://commoncrawl/, located in the US-East-1 (Northern Virginia) AWS Region. You may process the data in the AWS cloud or download it for free over HTTP(S)\". The Latest Crawl page (https://commoncrawl.org/latest-crawl, HTTP 200) states \"The latest crawl is: CC-MAIN-2026-43\" and offers gzipped path lists of \"WARC, WAT and WET files\". The archive index (https://data.commoncrawl.org/crawl-data/index.html, HTTP 200), titled \"Common Crawl Archives 2013-2026\", says \"The archives of the main crawl are released on a monthly basis\" and lists CC-MAIN-2026-43 (October 2026, 2.16 billion pages, 109.20 TiB compressed). The site menu also lists a CDXJ Index, URL Index and Web Graphs; these were not opened. The Common Crawl Foundation is a US non-profit running a global crawl, recorded as international-ngo. The Internet Archive's Wayback CDX API was considered as a sibling entry but not written here.\nLicence checked 2026-10-31: Terms of Use, \"LAST UPDATED: March 7, 2024\" (https://commoncrawl.org/terms-of-use). \"1. LIMITED LICENSE CC grants you a limited, non-assignable, non-transferable, non-sublicensable, non-exclusive, limited license to access and use the Service subject to the terms and conditions of these ToU.\" It adds that the \"Crawled Content\" \"may be subject to separate terms of use or terms of service from the owners of such Crawled Content\", and lists prohibited uses (e.g. harvesting personal information, breaking the law). This is a service licence, not an open data licence, and the copyright in crawled pages stays with their owners, so re-users must check both. Not checked: rate limits on data.commoncrawl.org, the web-graph and index formats in detail, and the pre-2013 crawls.\n"
+    },
+    {
+      "id": "cran-package-metadata",
+      "type": "dataset",
+      "title": "CRAN Package Repository Metadata",
+      "description": "Machine-readable indexes of all packages on CRAN, the Comprehensive R Archive Network (DESCRIPTION fields such as version, licence, dependencies, maintainer and publication date, in packages.rds and the PACKAGES index), alongside daily check results and the archive of past versions. The authoritative record of the R package ecosystem.\n",
+      "publisher": "CRAN team (Comprehensive R Archive Network), with resources of the R Foundation and WU Wien",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "open-source-software",
+        "package-ecosystems",
+        "r",
+        "software-metadata"
+      ],
+      "source": {
+        "canonical_url": "https://cran.r-project.org/web/packages/"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "rds",
+        "dcf",
+        "html"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (packages submitted to CRAN)",
+        "temporal": "current packages in the indexes; earlier versions in the Archive directory; start year not checked",
+        "cadence": "daily"
+      },
+      "license": "unverified — no licence or terms found for CRAN's own metadata files; each package carries its own licence in its DESCRIPTION file",
+      "attribution": "CRAN, the Comprehensive R Archive Network (https://CRAN.R-project.org)",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The page says \"Currently, the CRAN package repository features 25610 available packages\", links tables \"sorted by date of publication\" and \"by name\", \"CRAN Task Views\" (\"Currently, 50 views are available\"), check results, and the \"Archive\" of \"Previous versions of the packages\". HEAD requests returned HTTP 200 for https://cran.r-project.org/web/packages/packages.rds (12,699,068 bytes, last-modified Sat, 31 Oct 2026 21:30:28 GMT) and https://cran.r-project.org/src/contrib/PACKAGES.gz (1,965,157 bytes, same evening). Their field lists were not opened; packages.rds is an R serialised data frame and PACKAGES is Debian control (DCF) format. The CRAN Repository Policy (https://cran.r-project.org/web/packages/policies.html) says \"CRAN is maintained by the efforts of volunteers (the \"CRAN team\") and the resources of the R Foundation and the employers of those volunteers (WU Wien, TU Dortmund, U Oxford, U Auckland)\". The R Foundation is based in Vienna, but CRAN is a volunteer, multi-institution network, so it is recorded as international-ngo. The CRAN mirror network and download logs (e.g. the RStudio/Posit CRAN mirror logs) are not part of this entry. Cadence \"daily\" is a floor: the index files were regenerated on the day of checking.\nLicence checked 2026-10-31: none found. The Repository Policy addresses package licences (\"The package's license must give the right for CRAN to distribute the package in perpetuity\") but says nothing about re-use of CRAN's index or metadata files, and no terms page was found on cran.r-project.org. The metadata is largely author-supplied DESCRIPTION text, including maintainer names and email addresses.\n"
     },
     {
       "id": "enisa-euvd",
