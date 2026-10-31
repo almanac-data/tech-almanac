@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 5,
+  "count": 6,
   "by_status": {
-    "live": 5
+    "live": 6
   },
   "entries": [
     {
@@ -211,6 +211,56 @@
       "license": "unverified — Common Crawl Terms of Use (rev. March 7, 2024) grant a \"limited, non-assignable, non-transferable, non-sublicensable, non-exclusive\" licence to use the Service; crawled pages \"may be subject to separate terms\" from their owners; no open data licence named",
       "attribution": "Common Crawl Foundation, Common Crawl <crawl ID, e.g. CC-MAIN-2026-43>",
       "notes": "Human-verified 2026-10-31: HTTP 200. The Get Started page says the data \"is hosted by Amazon Web Services' Open Data Sets Sponsorships program on the bucket s3://commoncrawl/, located in the US-East-1 (Northern Virginia) AWS Region. You may process the data in the AWS cloud or download it for free over HTTP(S)\". The Latest Crawl page (https://commoncrawl.org/latest-crawl, HTTP 200) states \"The latest crawl is: CC-MAIN-2026-43\" and offers gzipped path lists of \"WARC, WAT and WET files\". The archive index (https://data.commoncrawl.org/crawl-data/index.html, HTTP 200), titled \"Common Crawl Archives 2013-2026\", says \"The archives of the main crawl are released on a monthly basis\" and lists CC-MAIN-2026-43 (October 2026, 2.16 billion pages, 109.20 TiB compressed). The site menu also lists a CDXJ Index, URL Index and Web Graphs; these were not opened. The Common Crawl Foundation is a US non-profit running a global crawl, recorded as international-ngo. The Internet Archive's Wayback CDX API was considered as a sibling entry but not written here.\nLicence checked 2026-10-31: Terms of Use, \"LAST UPDATED: March 7, 2024\" (https://commoncrawl.org/terms-of-use). \"1. LIMITED LICENSE CC grants you a limited, non-assignable, non-transferable, non-sublicensable, non-exclusive, limited license to access and use the Service subject to the terms and conditions of these ToU.\" It adds that the \"Crawled Content\" \"may be subject to separate terms of use or terms of service from the owners of such Crawled Content\", and lists prohibited uses (e.g. harvesting personal information, breaking the law). This is a service licence, not an open data licence, and the copyright in crawled pages stays with their owners, so re-users must check both. Not checked: rate limits on data.commoncrawl.org, the web-graph and index formats in detail, and the pre-2013 crawls.\n"
+    },
+    {
+      "id": "enisa-euvd",
+      "type": "dataset",
+      "title": "ENISA European Vulnerability Database (EUVD)",
+      "description": "The EU's vulnerability database, maintained by ENISA under the NIS2 Directive: publicly known vulnerabilities in ICT products and services with EUVD and alias identifiers (CVE, GHSA), CVSS scores, EPSS exploitation probability, exploited-in-the-wild flags and vendor data, including those coordinated by EU CSIRTs.\n",
+      "publisher": "European Union Agency for Cybersecurity (ENISA)",
+      "jurisdiction": {
+        "scope": "regional-bloc",
+        "country": null
+      },
+      "topics": [
+        "cybersecurity",
+        "vulnerabilities",
+        "cve",
+        "exploited-vulnerabilities",
+        "nis2"
+      ],
+      "source": {
+        "canonical_url": "https://euvd.enisa.europa.eu/"
+      },
+      "access": {
+        "method": [
+          "web",
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": "API responses capped at 100 records per search request (8 for the front-page endpoints); no request-rate limit stated"
+      },
+      "format": [
+        "json"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (ICT products and services), with an EU CSIRT coordination focus",
+        "temporal": "not checked",
+        "cadence": "daily"
+      },
+      "license": "unverified — no data-specific licence; ENISA website legal notice (site-wide) says \"Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise\"; much of the content is integrated from MITRE CVE and other sources",
+      "attribution": "European Union Agency for Cybersecurity (ENISA), European Vulnerability Database (EUVD)",
+      "notes": "Human-verified 2026-10-31: HTTP 200 for the HTML shell, but the page is a JavaScript app (\"You need to enable JavaScript to run this app\") and its contents needed headless Chromium. Rendered, it shows lists of \"Critical vulnerabilities\", \"Exploited vulnerabilities\" and \"EU CSIRT coordinated vulnerabilities\" updated within the last hours (e.g. EUVD-2026-114730, changed \"1 hour ago\"). The About page says \"As per the NIS2 Directive, ENISA is mandated to develop and maintain the European vulnerability database\", and the FAQ says it integrates data from \"MITRE's federated CVE Program\", vendor advisories and \"CISA's Known Exploited Vulnerability Catalogue\". The API page (https://euvd.enisa.europa.eu/apidoc) states \"All endpoints are GET, require no authentication\" with base URL https://euvdservices.enisa.europa.eu; a call to /api/lastvulnerabilities returned HTTP 200 application/json. No bulk download was found. Not checked: how far back records go, whether the record count matches CVE, and any rate limit beyond the per-request record caps.\nLicence checked 2026-10-31: no licence is shown on the EUVD pages or API docs. The EUVD footer links ENISA's Legal Notice (https://enisa.europa.eu/about-enisa/legal-notice/legal-notice, redirects to https://www.enisa.europa.eu/about-enisa/legal-notice), which covers \"data, text, software and multimedia\" on \"the ENISA website\" and says \"Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise.\" It also says \"the general principle is free access under open licenses\" under ENISA's IPR policy, without naming one. This is site-wide, not EUVD-specific, and does not address the third-party (CVE, vendor) content, so the licence is left unverified.\n"
     },
     {
       "id": "itu-datahub",

@@ -1,0 +1,43 @@
+id: enisa-euvd
+type: dataset
+title: ENISA European Vulnerability Database (EUVD)
+description: |
+  The EU's vulnerability database, maintained by ENISA under the NIS2 Directive: publicly known vulnerabilities in ICT products and services with EUVD and alias identifiers (CVE, GHSA), CVSS scores, EPSS exploitation probability, exploited-in-the-wild flags and vendor data, including those coordinated by EU CSIRTs.
+publisher: European Union Agency for Cybersecurity (ENISA)
+jurisdiction:
+  scope: regional-bloc
+  country: null
+topics:
+- cybersecurity
+- vulnerabilities
+- cve
+- exploited-vulnerabilities
+- nis2
+source:
+  canonical_url: https://euvd.enisa.europa.eu/
+access:
+  method:
+  - web
+  - api
+  auth_required: false
+  auth_note: null
+  rate_limit: API responses capped at 100 records per search request (8 for the front-page endpoints); no request-rate limit stated
+format:
+- json
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (ICT products and services), with an EU CSIRT coordination focus
+  temporal: not checked
+  cadence: daily
+license: unverified — no data-specific licence; ENISA website legal notice (site-wide) says "Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise"; much of the content is integrated from MITRE CVE and other sources
+attribution: European Union Agency for Cybersecurity (ENISA), European Vulnerability Database (EUVD)
+notes: |
+  Human-verified 2026-10-31: HTTP 200 for the HTML shell, but the page is a JavaScript app ("You need to enable JavaScript to run this app") and its contents needed headless Chromium. Rendered, it shows lists of "Critical vulnerabilities", "Exploited vulnerabilities" and "EU CSIRT coordinated vulnerabilities" updated within the last hours (e.g. EUVD-2026-114730, changed "1 hour ago"). The About page says "As per the NIS2 Directive, ENISA is mandated to develop and maintain the European vulnerability database", and the FAQ says it integrates data from "MITRE's federated CVE Program", vendor advisories and "CISA's Known Exploited Vulnerability Catalogue". The API page (https://euvd.enisa.europa.eu/apidoc) states "All endpoints are GET, require no authentication" with base URL https://euvdservices.enisa.europa.eu; a call to /api/lastvulnerabilities returned HTTP 200 application/json. No bulk download was found. Not checked: how far back records go, whether the record count matches CVE, and any rate limit beyond the per-request record caps.
+  Licence checked 2026-10-31: no licence is shown on the EUVD pages or API docs. The EUVD footer links ENISA's Legal Notice (https://enisa.europa.eu/about-enisa/legal-notice/legal-notice, redirects to https://www.enisa.europa.eu/about-enisa/legal-notice), which covers "data, text, software and multimedia" on "the ENISA website" and says "Reproduction of ENISA material published on this website is authorized, provided the source is acknowledged, unless it is stated otherwise." It also says "the general principle is free access under open licenses" under ENISA's IPR policy, without naming one. This is site-wide, not EUVD-specific, and does not address the third-party (CVE, vendor) content, so the licence is left unverified.
