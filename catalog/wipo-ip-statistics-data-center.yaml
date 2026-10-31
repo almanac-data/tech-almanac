@@ -1,0 +1,42 @@
+id: wipo-ip-statistics-data-center
+type: dataset
+title: WIPO IP Statistics Data Center
+description: |
+  The World Intellectual Property Organization's global statistics on intellectual property activity: patent, utility model, trademark and industrial design applications, grants and rights in force by office, origin and technology field, plus use of the PCT, Madrid and Hague international filing systems. It is the standard source for cross-country patent counts.
+publisher: World Intellectual Property Organization (WIPO)
+jurisdiction:
+  scope: multilateral
+  country: null
+topics:
+- patents
+- intellectual-property
+- trademarks
+- industrial-designs
+- pct
+- innovation
+source:
+  canonical_url: https://www3.wipo.int/ipstats/
+access:
+  method:
+  - web
+  auth_required: false
+  auth_note: null
+  rate_limit: null
+format: []
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: Global (national and regional IP offices; applicant origin countries)
+  temporal: varies by indicator (historical data sets before 1980 published separately)
+  cadence: annual
+license: WIPO IP Statistics Data Center conditions of use (free access; no republication or commercial resale of the datasets; cite "WIPO Statistics Database")
+attribution: WIPO Statistics Database
+notes: |
+  Human-verified 2026-10-31: HTTP 200 (curl). The page is a JavaScript app that client-side routes to https://www3.wipo.int/ipstats/key-search/indicator, and it was read in headless Chromium: "WIPO IP Statistics Data Center Source: WIPO statistics database. Last updated: May 2026", with tabs for Key indicators, Country profiles, Patent, Trademark, Industrial design, Utility model, Geographical indications, PCT, Madrid and Hague. The WIPO IP statistics landing page (https://www.wipo.int/ipstats/en/, which redirects to https://www.wipo.int/en/web/ip-statistics/, HTTP 200) calls the Data Center "a free online service" where users can "view or download both the latest and historical data", and links World Intellectual Property Indicators 2025 (2024 data). The download formats weren't checked (the FAQ mentions downloaded files opened in MS Excel), so format is left empty. No API was found.
+  Licence checked 2026-10-31: the Data Center's About page (https://www.wipo.int/en/web/ip-statistics/about) says under "Conditions of use": "By using WIPO's statistical data, users agree not to republish or commercially re-sell WIPO's statistical datasets. In addition, when employing WIPO's statistics data in any written work, users shall cite "WIPO Statistics Database" as the source of the data." This is a service-specific condition and is not an open licence. WIPO's general Terms of Use (https://www.wipo.int/en/web/terms-of-use, not read directly; per search results) put new WIPO publications under CC BY 4.0, which covers reports such as World IP Indicators but not, on the evidence seen, the datasets.
