@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 26,
+  "count": 27,
   "by_status": {
-    "live": 26
+    "live": 27
   },
   "entries": [
     {
@@ -1109,6 +1109,54 @@
       "license": "unverified — OECD terms page (oecd.org/en/about/terms-conditions.html) is behind a Cloudflare bot challenge and could not be read",
       "attribution": "OECD, Broadband and telecom databases (OECD Data Explorer)",
       "notes": "Human-verified 2026-10-31: HTTP 200 (curl). The Data Explorer is a JavaScript app and was read in headless Chromium, titled \"OECD Data Explorer • Broadband and telecom databases\". It says \"This dataset represents a selection of 14 indicators, based on questionnaires received by the OECD from relevant national authorities of OECD members and accession countries\", with \"Number of unfiltered data points: 69634\" and \"Last updated: October 13, 2026\". The default view is quarterly subscriptions. The SDMX API (https://sdmx.oecd.org/public/rest/dataflow/OECD.STI.DEP/DSD_BB_DATABASE@DF_BB_TEL_DATABASE/latest) answered HTTP 200 for dataflow version 2.0. The same API also lists related OECD.STI.DEP flows, \"ICT Access and Usage by Households\", \"...by Individuals\" and \"...by Businesses\", which aren't cataloged separately. The OECD Broadband Portal pages on www.oecd.org (https://www.oecd.org/en/topics/sub-issues/broadband-statistics.html) returned a Cloudflare \"Performing security verification\" page (HTTP 403) to curl and headless Chromium, so this entry points to the Data Explorer instead. The formats are taken from the Download and Developer API buttons and weren't tested. The canonical URL's square brackets are percent-encoded.\nLicence checked 2026-10-31: not verified. The Data Explorer footer links \"Terms & conditions\" to https://www.oecd.org/en/about/terms-conditions.html, which returned a Cloudflare 403 to headless Chromium and WebFetch this session. The labor-almanac oecd-employment-labour-market entry, checked the same day, quotes that page's \"3. Data\" section as permitting reuse \"for any purpose, even for commercial use\" with credit to the OECD, and says it is not CC BY 4.0. I did not read it myself, so no licence is asserted here.\n"
+    },
+    {
+      "id": "openssf-scorecard-results",
+      "type": "dataset",
+      "title": "OpenSSF Scorecard Results (REST API)",
+      "description": "Pre-computed security-practice scores (branch protection, code review, maintenance, pinned dependencies, dangerous workflows, signed releases and more) for over a million open-source repositories, from the OpenSSF's weekly scan and from projects publishing their own results, served through a public REST API. A widely used signal of open-source supply-chain hygiene.\n",
+      "publisher": "Open Source Security Foundation (OpenSSF Scorecard, a Series of LF Projects, LLC / Linux Foundation)",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "open-source-software",
+        "software-supply-chain",
+        "cybersecurity",
+        "security-metrics"
+      ],
+      "source": {
+        "canonical_url": "https://api.scorecard.dev/"
+      },
+      "access": {
+        "method": [
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "json"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (public repositories, mostly on GitHub)",
+        "temporal": "not checked (the API returns the latest result per repository; history depth not checked)",
+        "cadence": "weekly"
+      },
+      "license": "CDLA-Permissive-2.0 (Scorecard README, data-specific statement for REST API data)",
+      "attribution": "OpenSSF Scorecard",
+      "notes": "Human-verified 2026-10-31: HTTP 200. https://api.scorecard.dev/ serves a Swagger UI titled \"OpenSSF Scorecard\" documenting the API. An unauthenticated GET for https://api.scorecard.dev/projects/github.com/ossf/scorecard returned HTTP 200 with JSON (\"date\":\"2026-10-31T01:38:32Z\", \"scorecard\":{\"version\":\"v5.6.0\"...}). The project README (https://raw.githubusercontent.com/ossf/scorecard/main/README.md; github.com itself returned HTTP 403 to this session) says \"Scorecard scans more than 1.3 million repositories every week\" and \"Results are available through the REST API. The BigQuery public dataset is no longer available; see Scorecard Infrastructure Changes\" (GitHub issue #5208). So the BigQuery route named in the curation brief is retired; only the API is catalogued. The README also notes weekly-scan scores \"omit the CI-Tests, Contributors, and Dependency-Update-Tool checks\". The site footer at https://scorecard.dev/ reads \"Copyright © OpenSSF Scorecard a Series of LF Projects, LLC\", so the operator is the OpenSSF under the Linux Foundation, recorded as international-ngo. No bulk export was found; rate limits were not documented in the parts read. Besides the weekly scan, projects using the Scorecard GitHub Action with publish_results update their results on each change.\nLicence checked 2026-10-31: the README's \"Scorecard REST API\" section states \"Data provided by the REST API is licensed under the CDLA Permissive 2.0\" (linking https://cdla.dev/permissive-2-0). This is explicit and data-specific; it appears in the project's GitHub README rather than on the API page itself. The scorecard.dev footer points to https://lfprojects.org for website terms (not opened).\n"
     },
     {
       "id": "ripe-ncc-ripe-atlas",
