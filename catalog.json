@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 27,
+  "count": 28,
   "by_status": {
-    "live": 27
+    "live": 28
   },
   "entries": [
     {
@@ -1157,6 +1157,55 @@
       "license": "CDLA-Permissive-2.0 (Scorecard README, data-specific statement for REST API data)",
       "attribution": "OpenSSF Scorecard",
       "notes": "Human-verified 2026-10-31: HTTP 200. https://api.scorecard.dev/ serves a Swagger UI titled \"OpenSSF Scorecard\" documenting the API. An unauthenticated GET for https://api.scorecard.dev/projects/github.com/ossf/scorecard returned HTTP 200 with JSON (\"date\":\"2026-10-31T01:38:32Z\", \"scorecard\":{\"version\":\"v5.6.0\"...}). The project README (https://raw.githubusercontent.com/ossf/scorecard/main/README.md; github.com itself returned HTTP 403 to this session) says \"Scorecard scans more than 1.3 million repositories every week\" and \"Results are available through the REST API. The BigQuery public dataset is no longer available; see Scorecard Infrastructure Changes\" (GitHub issue #5208). So the BigQuery route named in the curation brief is retired; only the API is catalogued. The README also notes weekly-scan scores \"omit the CI-Tests, Contributors, and Dependency-Update-Tool checks\". The site footer at https://scorecard.dev/ reads \"Copyright © OpenSSF Scorecard a Series of LF Projects, LLC\", so the operator is the OpenSSF under the Linux Foundation, recorded as international-ngo. No bulk export was found; rate limits were not documented in the parts read. Besides the weekly scan, projects using the Scorecard GitHub Action with publish_results update their results on each change.\nLicence checked 2026-10-31: the README's \"Scorecard REST API\" section states \"Data provided by the REST API is licensed under the CDLA Permissive 2.0\" (linking https://cdla.dev/permissive-2-0). This is explicit and data-specific; it appears in the project's GitHub README rather than on the API page itself. The scorecard.dev footer points to https://lfprojects.org for website terms (not opened).\n"
+    },
+    {
+      "id": "psf-pypi-bigquery-datasets",
+      "type": "dataset",
+      "title": "PyPI Download Statistics and Distribution Metadata (BigQuery)",
+      "description": "The Python Package Index's two public BigQuery tables: per-file download events streamed from PyPI's logs (bigquery-public-data.pypi.file_downloads) and the core metadata of every release ever uploaded (bigquery-public-data.pypi.distribution_metadata). The standard source for measuring Python package usage.\n",
+      "publisher": "Python Software Foundation (PyPI)",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "open-source-software",
+        "package-ecosystems",
+        "python",
+        "package-downloads",
+        "software-metadata"
+      ],
+      "source": {
+        "canonical_url": "https://docs.pypi.org/api/bigquery/"
+      },
+      "access": {
+        "method": [
+          "api"
+        ],
+        "auth_required": true,
+        "auth_note": "Google Cloud account with BigQuery (the data is served from the bigquery-public-data project; free usage tier, billing for heavy queries)",
+        "rate_limit": null
+      },
+      "format": [
+        "bigquery"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (downloads from and releases on pypi.org)",
+        "temporal": "not checked",
+        "cadence": "daily"
+      },
+      "license": "CC-BY-4.0 (PyPI \"BigQuery Datasets\" documentation, data-specific statement)",
+      "attribution": "Python Software Foundation, PyPI BigQuery datasets (bigquery-public-data.pypi)",
+      "notes": "Human-verified 2026-10-31: HTTP 200. The PyPI user documentation says \"We use BigQuery to serve our public datasets. PyPI offers two tables whose data is sourced from projects on PyPI.\" The download table \"is populated through the Linehaul project by streaming download logs from PyPI to BigQuery\"; the metadata table \"is meant to be a data dump of metadata from every release on PyPI, which means that the rows in this BigQuery table are immutable and are not removed even if a release or project is deleted.\" The publisher is the PSF, not Google: pypi.org's footer reads \"Developed and maintained by the Python Software Foundation and Python community\"; Google only hosts the tables in its bigquery-public-data project. The PSF is a US-registered non-profit; it is recorded as international-ngo, following tech-almanac's treatment of other foundation-run global services. No BigQuery query was run, so the first date of download records and the table schemas were not checked. PyPI's JSON, Index and Stats APIs (same docs section) are not part of this entry. Cadence \"daily\" is a placeholder: download logs are streamed continuously.\nLicence checked 2026-10-31: the same page states \"The tables and its pertaining data are licensed under the Creative Commons License\", where the link points to https://creativecommons.org/licenses/by/4.0/. The licence is data-specific but named only through the link target, not spelled out as \"CC BY 4.0\" in the text.\n"
     },
     {
       "id": "ripe-ncc-ripe-atlas",

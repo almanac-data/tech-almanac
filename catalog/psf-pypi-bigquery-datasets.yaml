@@ -1,0 +1,42 @@
+id: psf-pypi-bigquery-datasets
+type: dataset
+title: PyPI Download Statistics and Distribution Metadata (BigQuery)
+description: |
+  The Python Package Index's two public BigQuery tables: per-file download events streamed from PyPI's logs (bigquery-public-data.pypi.file_downloads) and the core metadata of every release ever uploaded (bigquery-public-data.pypi.distribution_metadata). The standard source for measuring Python package usage.
+publisher: Python Software Foundation (PyPI)
+jurisdiction:
+  scope: international-ngo
+  country: null
+topics:
+- open-source-software
+- package-ecosystems
+- python
+- package-downloads
+- software-metadata
+source:
+  canonical_url: https://docs.pypi.org/api/bigquery/
+access:
+  method:
+  - api
+  auth_required: true
+  auth_note: Google Cloud account with BigQuery (the data is served from the bigquery-public-data project; free usage tier, billing for heavy queries)
+  rate_limit: null
+format:
+- bigquery
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (downloads from and releases on pypi.org)
+  temporal: not checked
+  cadence: daily
+license: CC-BY-4.0 (PyPI "BigQuery Datasets" documentation, data-specific statement)
+attribution: Python Software Foundation, PyPI BigQuery datasets (bigquery-public-data.pypi)
+notes: |
+  Human-verified 2026-10-31: HTTP 200. The PyPI user documentation says "We use BigQuery to serve our public datasets. PyPI offers two tables whose data is sourced from projects on PyPI." The download table "is populated through the Linehaul project by streaming download logs from PyPI to BigQuery"; the metadata table "is meant to be a data dump of metadata from every release on PyPI, which means that the rows in this BigQuery table are immutable and are not removed even if a release or project is deleted." The publisher is the PSF, not Google: pypi.org's footer reads "Developed and maintained by the Python Software Foundation and Python community"; Google only hosts the tables in its bigquery-public-data project. The PSF is a US-registered non-profit; it is recorded as international-ngo, following tech-almanac's treatment of other foundation-run global services. No BigQuery query was run, so the first date of download records and the table schemas were not checked. PyPI's JSON, Index and Stats APIs (same docs section) are not part of this entry. Cadence "daily" is a placeholder: download logs are streamed continuously.
+  Licence checked 2026-10-31: the same page states "The tables and its pertaining data are licensed under the Creative Commons License", where the link points to https://creativecommons.org/licenses/by/4.0/. The licence is data-specific but named only through the link target, not spelled out as "CC BY 4.0" in the text.
