@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 29,
+  "count": 30,
   "by_status": {
-    "live": 29
+    "live": 30
   },
   "entries": [
     {
@@ -1311,6 +1311,58 @@
       "license": "unverified — no licence for the dump data found on the Data Access Policy page or in the dump's README; the crates.io Usage Policy is CC-BY-4.0 but that covers the policy text, not the data",
       "attribution": "crates.io database dump, Rust Foundation / crates.io team (<dump timestamp, e.g. 2026-10-31-020010>)",
       "notes": "Human-verified 2026-10-31: HTTP 200 in headless Chromium; plain curl got HTTP 403 (and 404 with a minimal browser User-Agent), because crates.io is a JavaScript app behind bot filtering, so the vertical's headless check is needed. The Data Access Policy page says \"crates.io database dumps contain all information available through the crates.io API in a single download. They are updated every 24 hours. The latest dump is available at the address https://static.crates.io/db-dump.tar.gz.\" That URL redirects (307) to https://cloudfront-static.crates.io/db-dump.tar.gz, which answered HTTP 200 with content-length 2,118,275,837 and last-modified Sat, 31 Oct 2026 02:06:53 GMT. The first 3 MB were read: the archive root is \"2026-10-31-020010/\" with README.md, metadata.json (timestamp \"2026-10-31T02:00:10Z\"), schema.sql, import.sql and data/*.csv (categories, crate_downloads, crates, ...). The README says the live version_downloads table covers 90 days and \"All available historical data (back to November 2014) ... is available at https://static.crates.io/archive/version-downloads/ in CSV form\", and warns that CSV fields contain user-supplied text unmodified. The page also documents the sparse index (index.crates.io), RSS feeds and the API. The Usage Policy names \"the Rust Foundation as the official legal entity providing the crates.io service\"; the Foundation is US-registered and is recorded as international-ngo, like other foundation-run global registries in this vertical.\nLicence checked 2026-10-31: none found. The Data Access Policy page (https://crates.io/data-access) states access rules and rate limits but no licence; the dump README has no licence section; the Usage Policy (https://crates.io/policies) ends \"Licensed under the Creative Commons Attribution 4.0 International license\", which applies to that policy document. Crate metadata is author-submitted, and the dump includes user names and GitHub logins. Treat re-use terms as unstated. Not checked: the full CSV list beyond the first few files, and the dump changelog (GitHub issue #3617).\n"
+    },
+    {
+      "id": "software-heritage-graph-dataset",
+      "type": "dataset",
+      "title": "Software Heritage Graph Dataset",
+      "description": "Periodic full exports of the Software Heritage archive's deduplicated Merkle graph (file-content identifiers, directories, commits, releases, snapshots and origins, with crawl timestamps) from GitHub, GitLab, Debian, PyPI and other forges and package managers, as columnar ORC tables and a compressed graph. The largest public map of source code and its development history; file contents themselves are excluded.\n",
+      "publisher": "Software Heritage (initiative founded by Inria, in partnership with UNESCO)",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "open-source-software",
+        "source-code-archive",
+        "software-preservation",
+        "version-control",
+        "software-graph"
+      ],
+      "source": {
+        "canonical_url": "https://docs.softwareheritage.org/devel/swh-export/graph/dataset.html"
+      },
+      "access": {
+        "method": [
+          "bulk",
+          "s3",
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": "S3 bucket s3://softwareheritage/ is readable without an AWS account (--no-sign-request); use is subject to the Software Heritage Ethical Charter and Terms of use for bulk access",
+        "rate_limit": null
+      },
+      "format": [
+        "orc",
+        "webgraph-compressed"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "global (public source code from major forges, FOSS distributions and language package managers)",
+        "temporal": "graph exports listed back to at least 2025-10-08 in the current docs; latest full export 2026-06-04 (58.7 billion nodes, 1.10 trillion edges); earlier exports not checked",
+        "cadence": "irregular"
+      },
+      "license": "CC-BY-4.0 (Software Heritage Graph Dataset only, excluding file contents; licence statement on the Software Heritage-managed AWS Open Data registry entry), plus the Software Heritage Ethical Charter and Terms of use for bulk access",
+      "attribution": "Software Heritage Graph Dataset, Software Heritage, <export date, e.g. 2026-06-04>",
+      "notes": "Human-verified 2026-10-31: HTTP 200, but docs.softwareheritage.org answers curl and headless Chromium with an Anubis anti-bot challenge (\"Making sure you're not a bot!\", then \"Access Denied\" in Chromium), so the link checker will see 200 without real content. The page's content was read from its source file in Software Heritage's own GitLab (https://gitlab.softwareheritage.org/swh/devel/swh-export/-/raw/master/docs/graph/dataset.rst; the older swh-dataset path redirects there), which says \"We aim to provide regular exports of the Software Heritage graph in two different formats\": \"Columnar data storage\" (Apache ORC) and \"Compressed graph\" (Boldi-Vigna/WebGraph). Its table lists 2026-06-04 (\"A full export of the graph dated June 2026\", ORC 33 TiB, compressed 16 TiB at s3://softwareheritage/graph/2026-06-04/), 2026-03-02 and 2025-10-08. An anonymous S3 listing of s3://softwareheritage/graph/ confirmed those prefixes plus subset exports (e.g. \"2026-06-04-history-hosting\"). The archive's own API (https://archive.softwareheritage.org/api/1/stat/counters/, HTTP 200) reported 450,907,689 origins and 6,266,486,047 revisions. www.softwareheritage.org could not be reached (TLS chain error in curl, 502 in Chromium, 503 via WebFetch), so the operator description (Inria-founded, UNESCO partnership) is taken from the curation brief and was not verified on the publisher's site this session; Software Heritage is recorded as international-ngo per the owner's guidance, although it is hosted by Inria in France. The archive's web/API access as a whole is not separately catalogued here. Cadence: several exports a year (2025-10-08, 2026-03-02, 2026-06-04), although the AWS registry entry says \"Data is updated yearly\".\nLicence checked 2026-10-31: the AWS Open Data registry entry (https://registry.opendata.aws/software-heritage/, \"Managed By Software Heritage\") states: \"The term \"Software Heritage Graph Dataset\" designates the internal structure of the Software Heritage archive, and explicitly excludes the file contents. The \"Software Heritage Graph Dataset\" is distributed under the Creative Commons Attribution 4.0 International license. For terms of use of all other contents found in the S3 buckets, contact datasets@softwareheritage.org\" and \"By accessing the dataset, you agree with the Software Heritage Ethical Charter for using the archive data, the terms of use for bulk access, and the Software Heritage principles for large language models.\" The docs source adds \"Usage of the datasets from the Software Heritage archive is covered by our Ethical Charter and the Terms of use for bulk access\". The Charter and bulk-access terms themselves (on www.softwareheritage.org) could not be opened, so their conditions were NOT checked. Author/committer information is described as anonymized.\n"
     },
     {
       "id": "stanford-hai-ai-index",
