@@ -1,0 +1,44 @@
+id: cisa-kev
+type: dataset
+title: CISA Known Exploited Vulnerabilities (KEV) Catalog
+description: |
+  CISA's authoritative list of vulnerabilities known to be exploited in the wild, each with its CVE ID, vendor and product, date added, required action and due date, and known ransomware use. US federal agencies must remediate listed entries under Binding Operational Directive 22-01; it is widely used as a patch-priority signal.
+publisher: Cybersecurity and Infrastructure Security Agency (CISA), US Department of Homeland Security
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- cybersecurity
+- vulnerabilities
+- exploited-vulnerabilities
+- cve
+- patch-management
+source:
+  canonical_url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+access:
+  method:
+  - web
+  - bulk
+  auth_required: false
+  auth_note: null
+  rate_limit: null
+format:
+- csv
+- json
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global (vulnerabilities in products from any country, exploitation observed worldwide)
+  temporal: 2021-present (start year from the BOD 22-01 launch; not checked in the data)
+  cadence: irregular
+license: CC0-1.0 (KEV licence file, cisa.gov/sites/default/files/licenses/kev/license.txt)
+attribution: Cybersecurity and Infrastructure Security Agency (CISA), Known Exploited Vulnerabilities Catalog
+notes: |
+  Human-verified 2026-10-31: HTTP 200 in headless Chromium; plain curl got HTTP 403 even with a browser User-Agent. The page says "CISA maintains the authoritative source of vulnerabilities that have been exploited in the wild", "The KEV catalog is also available in these formats: CSV JSON", links a "JSON Schema (updated 09-02-2026)" and a "License", and shows "Showing 1 to 20 of 1766 results". The JSON feed (https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json) returned HTTP 200 to curl with "catalogVersion": "2026.10.30", "dateReleased": "2026-10-30T17:02:45.3665Z", "count": 1766. The CSV is at https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv (not downloaded). Cadence is "irregular" because entries are added as exploitation is confirmed, often several times a week. The 2021 start and the BOD 22-01 description are from background knowledge, not from pages read this session.
+  Licence checked 2026-10-31: https://www.cisa.gov/sites/default/files/licenses/kev/license.txt (403 to curl, HTTP 200 in headless Chromium): "The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner but note that information provided at any 3rd party links included in the KEV database are bound by the policies and licenses of those 3rd party websites. Use of the information does not authorize you to use the CISA Logo or DHS Seal". This is data-specific; as a federal agency work it would be public domain in the US anyway, and CC0 extends that worldwide.
