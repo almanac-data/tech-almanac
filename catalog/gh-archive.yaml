@@ -30,9 +30,11 @@ status_since: '2026-10-31'
 status_source: curator
 observed:
   checked: '2026-10-31'
-  reachable: null
-  http_status: null
-  final_url: null
+  reachable: true
+  http_status: 200
+  final_url: https://www.gharchive.org/
+  redirect_chain: []
+  fingerprint_result: no-baseline
 coverage:
   spatial: global (public activity on github.com)
   temporal: 2011-02-12 to present (Timeline API to 2014-12-31, Events API from 2015-01-01)
