@@ -1,0 +1,43 @@
+id: stanford-hai-ai-index
+type: dataset
+title: Stanford AI Index Report Public Data
+description: |
+  The chart data behind Stanford HAI's annual AI Index Report, a widely cited compilation of indicators on AI research and development, technical performance, responsible AI, the economy, science, medicine, education, policy and governance, and public opinion.
+publisher: Stanford Institute for Human-Centered Artificial Intelligence (HAI), AI Index Steering Committee
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- artificial-intelligence
+- ai-policy
+- ai-research
+- ai-investment
+- technology-indicators
+source:
+  canonical_url: https://hai.stanford.edu/ai-index/2026-ai-index-report
+access:
+  method:
+  - web
+  - bulk
+  auth_required: false
+  auth_note: null
+  rate_limit: null
+format:
+- pdf
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: global, with country comparisons
+  temporal: annual editions 2017-2026 (2020 not linked on the landing page); series start years vary
+  cadence: annual
+license: unverified — the 2026 report PDF is "licensed under Attribution-NoDerivatives 4.0 International" (CC-BY-ND-4.0); no separate licence was found for the public data folder, much of which compiles third-party sources
+attribution: 'Sajadieh, S., Fattorini, L., Perrault, R., Gil, Y., Parli, V., et al. "The AI Index 2026 Annual Report," AI Index Steering Committee, Institute for Human-Centered AI, Stanford University, Stanford, CA, April 2026. https://doi.org/10.48550/arXiv.2606.15708'
+notes: |
+  Human-verified 2026-10-31: HTTP 200 (read in headless Chromium). The 2026 report page links "Download the report" (https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf, HTTP 200, about 38 MB) and "Access the Public Data", a Google Drive folder (https://drive.google.com/drive/folders/1zJTOg0iR0j5SijCwFutwWvDt143lW277) titled "PUBLIC DATA: 2026 AI INDEX REPORT" with "Download all" and nine chapter folders ("1. Research and Development" to "9. Public Opinion"), all dated Apr 8. Google Drive is only Stanford's hosting choice; the publisher is Stanford HAI. The PDF says "The public data and high-resolution images of all the charts in the report are available on Google Drive." The AI Index landing page (https://hai.stanford.edu/ai-index) lists reports for 2017-2019 and 2021-2026. Stanford is a private university, not a government body; it is included as the one non-governmental AI source because the index is a research compilation, not company training or evaluation data. The file formats inside the chapter folders were not opened (only the PDF format is confirmed), and earlier editions' data links were not checked. Each new edition has a new URL, so this entry will need updating yearly.
+  Licence checked 2026-10-31: the 2026 report PDF, "How to Cite This Report" page: "The AI Index 2026 Annual Report by Stanford University is licensed under Attribution-NoDerivatives 4.0 International." That covers the report; no licence file or statement was seen for the Drive data folder, and the report draws on third-party data providers, so the data's licence is left unverified.
