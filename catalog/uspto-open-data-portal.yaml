@@ -1,0 +1,46 @@
+id: uspto-open-data-portal
+type: dataset
+title: USPTO Open Data Portal (including PatentsView)
+description: |
+  The US Patent and Trademark Office's single home for its public patent and trademark data: bulk data products, patent application and file-wrapper APIs, office actions, PTAB and petition decisions, and, since 2026, the PatentsView disambiguated inventor, assignee and location tables and long-text files formerly on patentsview.org.
+publisher: United States Patent and Trademark Office (USPTO)
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- patents
+- intellectual-property
+- invention
+- trademarks
+- united-states
+source:
+  canonical_url: https://data.uspto.gov/
+access:
+  method:
+  - web
+  - api
+  - bulk
+  auth_required: true
+  auth_note: free USPTO.gov account with multi-factor authentication required to sign in since June 18, 2026; API key (linked to ID.me per the FAQ) needed for APIs
+  rate_limit: API rate limits and a weekly download quota exist per the ODP FAQ (values not read)
+format:
+- csv
+- xml
+- json
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: United States (USPTO filings, applicants worldwide)
+  temporal: varies by product (PatentsView granted-patent tables from 1976 on the legacy site; not re-checked)
+  cadence: weekly
+license: public-domain (US Gov work)
+attribution: 'Source: United States Patent and Trademark Office, www.uspto.gov'
+notes: |
+  Human-verified 2026-10-31: HTTP 200 (curl; the portal is a JavaScript app and was read in headless Chromium). It shows "Open Data Portal Registration Requirement: In order to access the Open Data Portal (ODP), starting on June 18, 2026, you'll need to sign in with a valid USPTO.gov account", with MFA required, and says API keys for accounts missing profile fields "have been deactivated" since October 8, 2026. Dataset pages such as https://data.uspto.gov/bulkdata/datasets/pvgpatdis now redirect to a sign-in dialog, so no dataset content was read. https://patentsview.org/ answers 301 to https://data.uspto.gov/support/transition-guide/patentsview (HTTP 200), which says "The legacy PatentsView website (www.patentsview.org) is migrating to the USPTO's Open Data Portal (https://data.uspto.gov) starting on March 20, 2026". It maps the granted-patent and pre-grant tables (g_patent, g_cpc_current, g_assignee_disambiguated, claims and description text by year, sorted and annualized tables) to ODP bulk datasets pvgpatdis, pvgpattxt, pvpgpubdis, pvpgpubtxt, pvsorted and pva, so PatentsView is cataloged here rather than separately. The formats are assumed (PatentsView tables are CSV/TSV, bulk grants XML, APIs JSON) and weren't opened. The cadence describes the weekly bulk grant and application files; PatentsView tables update less often. Coverage start years weren't checked.
+  Licence checked 2026-10-31: no ODP-specific licence was found; the FAQ answers are collapsed and weren't expanded. USPTO's Terms of Use for USPTO websites (https://www.uspto.gov/terms-use-uspto-websites, HTTP 200) says "Pursuant to federal law, most government-produced materials appearing on this website are not subject to copyright restrictions within the United States and are therefore in the public domain", asks for acknowledgement ("Source: United States Patent and Trademark Office, www.uspto.gov"), and notes "The USPTO reserves the right to assert copyright protection internationally." This is site-wide wording, not a data-specific licence. The PatentsView tables were historically built by contractors for USPTO, and the legacy patentsview.org site carried its own licence statement, which can no longer be read there. The licence for those tables is therefore less certain than for USPTO's own bulk data.
