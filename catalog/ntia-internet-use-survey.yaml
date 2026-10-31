@@ -1,0 +1,47 @@
+id: ntia-internet-use-survey
+type: dataset
+title: NTIA Internet Use Survey (CPS Computer and Internet Use Supplement)
+description: |
+  The US government's long-running survey of how Americans go online, fielded as a supplement to the Census Bureau's Current Population Survey. It covers internet use by location, devices, home connectivity, reasons for non-use and online activities, with public use microdata for every wave since 1998 and NTIA's summary Analyze Table.
+publisher: National Telecommunications and Information Administration (NTIA), US Department of Commerce
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- internet-use
+- broadband-adoption
+- digital-divide
+- household-survey
+- united-states
+source:
+  canonical_url: https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets
+access:
+  method:
+  - web
+  - bulk
+  auth_required: false
+  auth_note: null
+  rate_limit: null
+format:
+- csv
+- dta
+- rds
+- fixed-width
+- pdf
+status: live
+status_since: '2026-10-31'
+status_source: curator
+observed:
+  checked: '2026-10-31'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: United States (national and state)
+  temporal: 1998-2023 (Dec 1998 to Nov 2023 survey waves)
+  cadence: irregular
+license: public-domain (US Gov work)
+attribution: NTIA Internet Use Survey (Current Population Survey Computer and Internet Use Supplement), National Telecommunications and Information Administration
+notes: |
+  Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium). The page says "NTIA has made public use datasets available for every NTIA Internet Use Survey, as well as the Analyze Table of summary statistics used in the Data Explorer. All datasets are available in Stata, R, CSV, and raw/fixed formats, and are accompanied by official documentation produced by the Census Bureau". The newest wave listed is Nov 2023 (nov23-cps-*.zip, posted 08/30/2024), and waves go back to Aug 2000 in the download table. The NTIA Data Explorer (https://www.ntia.gov/data/explorer, HTTP 200) offers datasets from Dec 1998 to Nov 2023 by state, with "Full data set: ntia-analyze-table.csv". The guessed URL https://www.ntia.gov/page/ntia-internet-use-survey returned 404. The cadence is recorded as irregular: waves have been biennial since 2017 and irregular before that, and the schema has no biennial value. The file downloads themselves weren't opened.
+  Licence checked 2026-10-31: no data-specific licence was found. NTIA's Web Policies page (https://www.ntia.gov/page/web-policies) covers linking and comments only and has no copyright statement. The data is collected for NTIA by the US Census Bureau, both federal agencies, and published by NTIA, so it is treated as a US Government work (17 U.S.C. 105). This is inferred from authorship, not from a stated licence.

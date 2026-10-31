@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 12,
+  "count": 13,
   "by_status": {
-    "live": 12
+    "live": 13
   },
   "entries": [
     {
@@ -622,6 +622,60 @@
       "license": "public-domain (US Gov work) for NIST's own content; CVE descriptions inside NVD records come from MITRE's CVE List under the CVE Terms of Use",
       "attribution": "National Institute of Standards and Technology, National Vulnerability Database. Services are asked to display: \"This product uses data from the NVD API but is not endorsed or certified by the NVD.\"",
       "notes": "Human-verified 2026-10-31: HTTP 200 (pages rendered with headless Chromium; plain curl to https://nvd.nist.gov/ also returned 200). The NVD Data Feeds page lists \"CVE and CPE APIs\", \"2.0 JSON Feeds\" (Vulnerability, CPE Dictionary and CPE Match feeds), translation feeds and vendor comments. It says \"The 'year' feeds are updated once per day, while the 'recent' and 'modified' feeds are updated every two hours\", and the CVE-Modified feed showed \"Oct 31, 2026; 4:00:08 PM +0000\" (GZ, 13.86 MB). The developers page (https://nvd.nist.gov/developers/start-here) gives the rate limits recorded above. A direct call to https://services.nvd.nist.gov/rest/json/cves/2.0 timed out after 20 seconds from this session, so the API itself was not confirmed. Not checked: the NIST Public Data Repository DOI for citation, and how far back the CVSS analysis goes.\nLicence checked 2026-10-31: the NVD developers page and the Data Feeds page say \"All NIST publications are available in the public domain according to Title 17 of the United States Code, however services which utilize or access the NVD are asked to display the following notice prominently within the application: 'This product uses data from the NVD API but is not endorsed or certified by the NVD.'\" The NVD General FAQ (https://nvd.nist.gov/general/faq-sections/general-faqs) repeats \"All NIST publications are available in the public domain.\" NIST is a federal agency, so its own analysis is a US Government work. NVD records also carry CVE text that MITRE licenses under the CVE Terms of Use (see mitre-cve-list), so re-users of full records should keep MITRE's notice too.\n"
+    },
+    {
+      "id": "ntia-internet-use-survey",
+      "type": "dataset",
+      "title": "NTIA Internet Use Survey (CPS Computer and Internet Use Supplement)",
+      "description": "The US government's long-running survey of how Americans go online, fielded as a supplement to the Census Bureau's Current Population Survey. It covers internet use by location, devices, home connectivity, reasons for non-use and online activities, with public use microdata for every wave since 1998 and NTIA's summary Analyze Table.\n",
+      "publisher": "National Telecommunications and Information Administration (NTIA), US Department of Commerce",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "internet-use",
+        "broadband-adoption",
+        "digital-divide",
+        "household-survey",
+        "united-states"
+      ],
+      "source": {
+        "canonical_url": "https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "csv",
+        "dta",
+        "rds",
+        "fixed-width",
+        "pdf"
+      ],
+      "status": "live",
+      "status_since": "2026-10-31",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-10-31",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "United States (national and state)",
+        "temporal": "1998-2023 (Dec 1998 to Nov 2023 survey waves)",
+        "cadence": "irregular"
+      },
+      "license": "public-domain (US Gov work)",
+      "attribution": "NTIA Internet Use Survey (Current Population Survey Computer and Internet Use Supplement), National Telecommunications and Information Administration",
+      "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium). The page says \"NTIA has made public use datasets available for every NTIA Internet Use Survey, as well as the Analyze Table of summary statistics used in the Data Explorer. All datasets are available in Stata, R, CSV, and raw/fixed formats, and are accompanied by official documentation produced by the Census Bureau\". The newest wave listed is Nov 2023 (nov23-cps-*.zip, posted 08/30/2024), and waves go back to Aug 2000 in the download table. The NTIA Data Explorer (https://www.ntia.gov/data/explorer, HTTP 200) offers datasets from Dec 1998 to Nov 2023 by state, with \"Full data set: ntia-analyze-table.csv\". The guessed URL https://www.ntia.gov/page/ntia-internet-use-survey returned 404. The cadence is recorded as irregular: waves have been biennial since 2017 and irregular before that, and the schema has no biennial value. The file downloads themselves weren't opened.\nLicence checked 2026-10-31: no data-specific licence was found. NTIA's Web Policies page (https://www.ntia.gov/page/web-policies) covers linking and comments only and has no copyright statement. The data is collected for NTIA by the US Census Bureau, both federal agencies, and published by NTIA, so it is treated as a US Government work (17 U.S.C. 105). This is inferred from authorship, not from a stated licence.\n"
     }
   ]
 }
