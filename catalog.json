@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 30,
+  "count": 31,
   "by_status": {
-    "live": 30
+    "live": 31
   },
   "entries": [
     {
@@ -434,6 +434,58 @@
       "license": "CC-BY-4.0 (Eurostat copyright notice and free re-use of data)",
       "attribution": "Eurostat",
       "notes": "Human-verified 2026-10-31: HTTP 200 (curl and headless Chromium), page \"Database - Digital economy and society - Eurostat\", with \"Comprehensive database\", \"Selected datasets\" and \"Detailed datasets\" trees and tabs for Visualisations, Methodology and Legislation. The tree is collapsed in the page text, so the subject list in the description follows Eurostat's usual ICT-survey structure and wasn't read item by item. As a spot check, the dissemination API (https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_ci_ifp_iu) returned JSON \"Individuals - internet use\", updated 2026-04-17, with time labels 2002-2025 (EU27_2020 share of individuals using the internet in the last 12 months: 94.53 for the latest year). Other formats are taken from Eurostat's general dissemination services and weren't checked. The R&D, innovation and patent tables are cataloged in science-almanac (eurostat-science-technology-innovation-database) and aren't duplicated here.\nLicence checked 2026-10-31: Eurostat's copyright notice (https://ec.europa.eu/eurostat/help/copyright-notice) says \"The copyright for the editorial content of this website, which is owned by the EU, is licensed under the Creative Commons Attribution 4.0 International licence\" and \"Reuse of statistical data, metadata, publications, and other dissemination tools published on this website for commercial or non-commercial purposes is authorised provided the source is acknowledged.\" This matches the licence string used by the other Eurostat entries across the Almanac.\n"
+    },
+    {
+      "id": "fcc-national-broadband-map",
+      "type": "dataset",
+      "title": "FCC National Broadband Map (Broadband Data Collection)",
+      "description": "Location-level US fixed broadband availability and modelled mobile coverage, as reported twice a year by internet service providers to the FCC's Broadband Data Collection, with provider and area summaries, challenge data and bulk downloads. It is the basis for federal broadband funding decisions.\n",
+      "publisher": "U.S. Federal Communications Commission (FCC)",
+      "jurisdiction": {
+        "scope": "national",
+        "country": "US"
+      },
+      "topics": [
+        "broadband",
+        "availability",
+        "mobile-coverage",
+        "digital-access",
+        "united-states"
+      ],
+      "source": {
+        "canonical_url": "https://broadbandmap.fcc.gov/home"
+      },
+      "access": {
+        "method": [
+          "web",
+          "bulk",
+          "api"
+        ],
+        "auth_required": false,
+        "auth_note": "Bulk downloads need no account; the BDC Public Data API's access requirements were not checked.",
+        "rate_limit": null
+      },
+      "format": [
+        "zip",
+        "csv"
+      ],
+      "status": "live",
+      "status_since": "2026-11-01",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-11-01",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "United States and territories (location level; state, county, congressional district, Tribal area, CBSA and census place summaries)",
+        "temporal": "availability data as of 30 Jun 2022 to 30 Jun 2026 (twice yearly)",
+        "cadence": "irregular"
+      },
+      "license": "public-domain (US Gov work)",
+      "attribution": "Federal Communications Commission, National Broadband Map (Broadband Data Collection), data as of <date>",
+      "notes": "Human-verified 2026-11-01 in headless Chromium (new headless mode): HTTP 200. https://broadbandmap.fcc.gov/ redirects to /home, which is catalogued here. curl, plain and with a browser User-Agent, got HTTP 403 from the CDN, so the vertical needs reachability.headless: true. The About page says: \"This map displays where Internet services are available across the United States, as reported by Internet Service Providers (ISPs) to the FCC\", and \"All providers must report data as of June 30 (due September 1) and December 31 (due March 1) each year.\" It says fixed providers report \"on a location-by-location basis\" using location points that \"come from the Fabric\", and that mobile coverage comes from \"propagation modeling\". The Data Download page lists availability data \"As Of Jun 30, 2026 (latest)\" back to \"Jun 30, 2022\", \"Last updated 10/24/26\", with zipped downloads by state, by provider and for challenges, plus links to the \"Data Spec. for BDC Public Data Downloads\" and \"BDC Public Data API Specifications\" (both on us-fcc.box.com). I did not open the ZIP files, so CSV is assumed, and I did not read the API spec. Cadence is set to irregular because the schema has no twice-yearly value; the data are as of 30 June and 31 December each year. I did not check whether the Fabric location data carry separate licence terms.\nLicence checked 2026-11-01: I found no licence or copyright statement on broadbandmap.fcc.gov (home, About, Data Download), and the FCC's Website Notices page (https://www.fcc.gov/website-notices) covers accessibility, privacy and maintenance, not reuse. public-domain is asserted from the FCC's status as a federal agency (17 U.S.C. 105), not from an FCC statement. The availability data are filed by private ISPs, and the map's location points come from the Fabric; I did not check whether either carries separate terms.\n"
     },
     {
       "id": "first-epss",
