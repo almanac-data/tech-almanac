@@ -1,0 +1,45 @@
+id: fcc-national-broadband-map
+type: dataset
+title: FCC National Broadband Map (Broadband Data Collection)
+description: |
+  Location-level US fixed broadband availability and modelled mobile coverage, as reported twice a year by internet service providers to the FCC's Broadband Data Collection, with provider and area summaries, challenge data and bulk downloads. It is the basis for federal broadband funding decisions.
+publisher: U.S. Federal Communications Commission (FCC)
+jurisdiction:
+  scope: national
+  country: US
+topics:
+- broadband
+- availability
+- mobile-coverage
+- digital-access
+- united-states
+source:
+  canonical_url: https://broadbandmap.fcc.gov/home
+access:
+  method:
+  - web
+  - bulk
+  - api
+  auth_required: false
+  auth_note: Bulk downloads need no account; the BDC Public Data API's access requirements were not checked.
+  rate_limit: null
+format:
+- zip
+- csv
+status: live
+status_since: '2026-11-01'
+status_source: curator
+observed:
+  checked: '2026-11-01'
+  reachable: null
+  http_status: null
+  final_url: null
+coverage:
+  spatial: United States and territories (location level; state, county, congressional district, Tribal area, CBSA and census place summaries)
+  temporal: availability data as of 30 Jun 2022 to 30 Jun 2026 (twice yearly)
+  cadence: irregular
+license: public-domain (US Gov work)
+attribution: Federal Communications Commission, National Broadband Map (Broadband Data Collection), data as of <date>
+notes: |
+  Human-verified 2026-11-01 in headless Chromium (new headless mode): HTTP 200. https://broadbandmap.fcc.gov/ redirects to /home, which is catalogued here. curl, plain and with a browser User-Agent, got HTTP 403 from the CDN, so the vertical needs reachability.headless: true. The About page says: "This map displays where Internet services are available across the United States, as reported by Internet Service Providers (ISPs) to the FCC", and "All providers must report data as of June 30 (due September 1) and December 31 (due March 1) each year." It says fixed providers report "on a location-by-location basis" using location points that "come from the Fabric", and that mobile coverage comes from "propagation modeling". The Data Download page lists availability data "As Of Jun 30, 2026 (latest)" back to "Jun 30, 2022", "Last updated 10/24/26", with zipped downloads by state, by provider and for challenges, plus links to the "Data Spec. for BDC Public Data Downloads" and "BDC Public Data API Specifications" (both on us-fcc.box.com). I did not open the ZIP files, so CSV is assumed, and I did not read the API spec. Cadence is set to irregular because the schema has no twice-yearly value; the data are as of 30 June and 31 December each year. I did not check whether the Fabric location data carry separate licence terms.
+  Licence checked 2026-11-01: I found no licence or copyright statement on broadbandmap.fcc.gov (home, About, Data Download), and the FCC's Website Notices page (https://www.fcc.gov/website-notices) covers accessibility, privacy and maintenance, not reuse. public-domain is asserted from the FCC's status as a federal agency (17 U.S.C. 105), not from an FCC statement. The availability data are filed by private ISPs, and the map's location points come from the Fabric; I did not check whether either carries separate terms.
