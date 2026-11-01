@@ -28,7 +28,7 @@ status: live
 status_since: '2026-10-31'
 status_source: curator
 observed:
-  checked: '2026-10-31'
+  checked: '2026-11-01'
   reachable: true
   http_status: 200
   final_url: https://www.epo.org/en/searching-for-patents/data/bulk-data-sets
