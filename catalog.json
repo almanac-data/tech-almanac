@@ -1,9 +1,9 @@
 {
   "name": "Tech Almanac",
   "description": "An open, versioned index of public technology data.",
-  "count": 29,
+  "count": 30,
   "by_status": {
-    "live": 29
+    "live": 30
   },
   "entries": [
     {
@@ -650,6 +650,56 @@
       "license": "mixed per source — each upstream database keeps its own licence: CC-BY-4.0 (e.g. GitHub Advisory Database, PyPI, Go, OSS-Fuzz), CC0-1.0 (e.g. RustSec), MIT, Apache-2.0, BSD, CC-BY-SA-4.0 (Ubuntu, Alpine), CC-BY-NC-ND-4.0 (Chainguard/Wolfi) (OSV.dev \"Data sources\" page)",
       "attribution": "OSV.dev, plus the upstream advisory database named in each record (database_specific.source), per that source's licence",
       "notes": "Human-verified 2026-10-31: HTTP 200. The home page reads \"A distributed vulnerability database for Open Source\" and lists per-ecosystem counts (e.g. \"npm 230252\", \"Debian 72451\", \"crates.io 2904\"). The docs (https://google.github.io/osv.dev/data/, HTTP 200) say the sources \"are aggregated and continuously exported to a GCS bucket maintained by OSV: gs://osv-vulnerabilities\", with a full \"all.zip\", per-ecosystem all.zip files (also over HTTPS, e.g. https://storage.googleapis.com/osv-vulnerabilities/PyPI/all.zip, which answered HTTP 200 to a HEAD request), and modified_id.csv change lists. The API is documented at google.github.io/osv.dev/api/; no API call was made. The project's code lives at github.com/google/osv.dev and its docs on google.github.io, so the operator is recorded as Google; the format itself is the \"OpenSSF Vulnerability format\" (the OSV schema is an OpenSSF project). Google is a company; jurisdiction national/US records its legal seat only. Some ecosystem rows (Debian, the NVD conversion) are converted by the OSV team rather than published natively in OSV format. Overlaps with the CVE List and NVD by alias, but is keyed on packages and versions. Cadence \"daily\" is a placeholder for continuous export.\nLicence checked 2026-10-31: there is no single licence for the database. The \"Data sources\" page (https://google.github.io/osv.dev/data/) lists each source with its licence, e.g. \"GitHub Advisory Database ( CC-BY 4.0 )\", \"Rust Advisory Database ( CC0 1.0 )\", \"Ubuntu ( CC-BY-SA 4.0 )\", \"Chainguard / Wolfi ( CC-BY-NC-ND 4.0 )\", \"Alpine SecDB ( CC-BY-SA 4.0 )\"; the Debian and NVD conversions have no licence stated on that page. The \"New Data Source\" page says a contributed source's licence \"must at minimum permit OSV.dev to ingest, index, modify (enrich), and publicly redistribute the records\". Re-users of all.zip therefore inherit a mix of licences, including share-alike and one non-commercial/no-derivatives source; filter by ecosystem if that matters. Not checked: start year of records, the BigQuery availability (if any), and the licence of the Debian conversion.\n"
+    },
+    {
+      "id": "internet-archive-wayback-machine-apis",
+      "type": "dataset",
+      "title": "Internet Archive Wayback Machine APIs (Availability, Memento and CDX Server)",
+      "description": "The Internet Archive's public interfaces to the Wayback Machine's capture index: the Availability JSON API, Memento support, and the Wayback CDX Server, which allows \"complex querying, filtering and analysis of Wayback capture data\". Together they are the main way to ask what the Wayback Machine holds for a URL, and when it was captured.\n",
+      "publisher": "Internet Archive",
+      "jurisdiction": {
+        "scope": "international-ngo",
+        "country": null
+      },
+      "topics": [
+        "web-archive",
+        "crawl",
+        "internet-measurement",
+        "capture-index"
+      ],
+      "source": {
+        "canonical_url": "https://archive.org/help/wayback_api.php"
+      },
+      "access": {
+        "method": [
+          "api",
+          "web"
+        ],
+        "auth_required": false,
+        "auth_note": null,
+        "rate_limit": null
+      },
+      "format": [
+        "json",
+        "txt"
+      ],
+      "status": "live",
+      "status_since": "2026-11-01",
+      "status_source": "curator",
+      "observed": {
+        "checked": "2026-11-01",
+        "reachable": null,
+        "http_status": null,
+        "final_url": null
+      },
+      "coverage": {
+        "spatial": "Global (the public web, as captured)",
+        "temporal": "not checked (capture dates vary by URL); the API page itself says \"Updated on September, 24, 2013\"",
+        "cadence": "irregular"
+      },
+      "license": "unverified — Internet Archive Terms of Use (31 Dec 2014) say access to the Collections \"is granted for scholarship and research purposes only\"; no open data licence is named, and archived pages remain their owners' copyright",
+      "attribution": "Internet Archive, Wayback Machine (CDX Server API)",
+      "notes": "Human-verified 2026-11-01: HTTP 200 (plain curl). The issue's URL, https://archive.org/developers/wayback-cdx-server.html, returns 404, as does /developers/wayback-cdx-server-api.html. This page, \"Wayback Machine APIs | Internet Archive\", is the Internet Archive's own listing of \"currently supported APIs\": the \"Wayback Availability JSON API\" (http://archive.org/wayback/available?url=example.com), the \"Memento API\", and the \"Wayback CDX Server API\", which it describes as \"another API which allows for complex querying, filtering and analysis of Wayback capture data\". It says \"The latest documentation on the CDX server can be found at: Wayback CDX Server @ GitHub\", linking https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server. That README is the detailed CDX reference; this session's proxy could not reach GitHub to read it. The page is dated \"Updated on September, 24, 2013\". The developer docs index (https://archive.org/developers/index-apis.html, HTTP 200) also lists \"Wayback machine APIs ... for determining if a URL is stored on the Wayback Machine and for querying, filtering and analysis of snapshot data\", with a Swagger reference whose spec (https://archive.org/developers/_static/wayback.json) covers only /wayback/available, and a \"Bots, LLMs, and Automated Access\" page on user-agent and rate-limit expectations (not read). The CDX endpoint (https://web.archive.org/cdx/search/cdx) was not reachable from this session (connection reset over HTTPS, 403 over HTTP), so I did not test a query, the output formats or the limits; json and txt are the documented CDX outputs, not confirmed here. The underlying WARC crawl files are not offered for bulk download through these APIs, and this entry does not cover them.\nLicence checked 2026-11-01: Internet Archive Terms of Use, dated \"31 Dec 2014\" (https://archive.org/about/terms, read in headless Chromium): \"Access to the Archive's Collections is provided at no cost to you and is granted for scholarship and research purposes only.\" The terms also say the Collections come \"from around the world\" and that the Archive \"does not endorse or sponsor any content in the Collections\". These are terms of use, not an open data licence, and archived pages keep their owners' copyright. The Almanac's own recovery[] links depend on this service.\n"
     },
     {
       "id": "itu-datahub",
