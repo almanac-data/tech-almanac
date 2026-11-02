@@ -42,7 +42,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20",
@@ -95,7 +95,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
@@ -149,7 +149,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://developers.cloudflare.com/radar/",
@@ -204,7 +204,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://commoncrawl.org/get-started",
@@ -257,7 +257,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://cran.r-project.org/web/packages/",
@@ -309,7 +309,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://euvd.enisa.europa.eu/",
@@ -361,7 +361,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.epo.org/en/searching-for-patents/data/bulk-data-sets",
@@ -419,7 +419,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://ec.europa.eu/eurostat/web/digital-economy-and-society/database",
@@ -473,7 +473,7 @@
       "status_since": "2026-11-01",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://broadbandmap.fcc.gov/home",
@@ -528,7 +528,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.first.org/epss/data",
@@ -581,7 +581,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.gharchive.org/",
@@ -634,7 +634,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://docs.deps.dev/bigquery/v1/",
@@ -689,7 +689,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://osv.dev/",
@@ -741,7 +741,7 @@
       "status_since": "2026-11-01",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://archive.org/help/wayback_api.php",
@@ -791,7 +791,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 202,
         "final_url": "https://datahub.itu.int/",
@@ -842,7 +842,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://libraries.io/api",
@@ -893,7 +893,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.cve.org/Downloads",
@@ -947,7 +947,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.measurementlab.net/data/",
@@ -1002,7 +1002,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://nvd.nist.gov/vuln/data-feeds",
@@ -1052,7 +1052,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://docs.npmjs.com/policies/crawlers/",
@@ -1108,7 +1108,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets",
@@ -1159,7 +1159,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://oecd.ai/en/dashboards/overview",
@@ -1212,7 +1212,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP",
@@ -1262,7 +1262,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://api.scorecard.dev/",
@@ -1313,7 +1313,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://docs.pypi.org/api/bigquery/",
@@ -1366,7 +1366,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://atlas.ripe.net/",
@@ -1420,7 +1420,7 @@
       "status_since": "2026-11-01",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://crates.io/data-access",
@@ -1474,7 +1474,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://docs.softwareheritage.org/devel/swh-export/graph/dataset.html",
@@ -1526,7 +1526,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
@@ -1576,7 +1576,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www23.statcan.gc.ca/imdb/p2SV.pl?Function=getSurvey&SDDS=4432",
@@ -1631,7 +1631,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://data.uspto.gov/",
@@ -1681,7 +1681,7 @@
       "status_since": "2026-10-31",
       "status_source": "curator",
       "observed": {
-        "checked": "2026-11-01",
+        "checked": "2026-11-02",
         "reachable": true,
         "http_status": 200,
         "final_url": "https://www3.wipo.int/ipstats/",
