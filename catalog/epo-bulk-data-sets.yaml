@@ -34,6 +34,13 @@ observed:
   final_url: https://www.epo.org/en/searching-for-patents/data/bulk-data-sets
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261024065507/https://www.epo.org/en/searching-for-patents/data/bulk-data-sets
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-24'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: European patents (EP), plus worldwide bibliographic and legal-event data from many patent offices (DOCDB, INPADOC)
   temporal: varies by product (front files updated weekly; back files available)

@@ -37,6 +37,13 @@ observed:
   final_url: https://commoncrawl.org/get-started
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261104212547/https://commoncrawl.org/get-started
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-04'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: a capture it requested from Save Page Now.'
 coverage:
   spatial: global (public web pages fetched by CCBot)
   temporal: monthly archives 2013-present on the archive index page (latest CC-MAIN-2026-43, October 2026); earlier crawls not checked

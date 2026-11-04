@@ -36,6 +36,13 @@ observed:
   final_url: https://broadbandmap.fcc.gov/home
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261026072443/https://broadbandmap.fcc.gov/home
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-26'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: United States and territories (location level; state, county, congressional district, Tribal area, CBSA and census place summaries)
   temporal: availability data as of 30 Jun 2022 to 30 Jun 2026 (twice yearly)

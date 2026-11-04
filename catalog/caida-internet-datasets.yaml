@@ -34,6 +34,13 @@ observed:
   final_url: https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261104212002/https://catalog.caida.org/search?query=types=dataset%20links=tag:caida%20
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-04'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: a capture it requested from Save Page Now.'
 coverage:
   spatial: global Internet (topology, routing and traffic observed from CAIDA vantage points)
   temporal: varies by dataset (e.g. pfx2as daily from 2005-05-09 for IPv4, 2007-01-01 for IPv6)

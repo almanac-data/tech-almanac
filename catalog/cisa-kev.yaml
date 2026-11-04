@@ -35,6 +35,13 @@ observed:
   final_url: https://www.cisa.gov/known-exploited-vulnerabilities-catalog
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261104093143/https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-04'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: a capture it requested from Save Page Now.'
 coverage:
   spatial: global (vulnerabilities in products from any country, exploitation observed worldwide)
   temporal: 2021-present (start year from the BOD 22-01 launch; not checked in the data)
