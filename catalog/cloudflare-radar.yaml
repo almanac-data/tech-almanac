@@ -36,6 +36,13 @@ observed:
   final_url: https://developers.cloudflare.com/radar/
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261023173625/https://developers.cloudflare.com/radar/
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-23'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-04: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: global (traffic seen by Cloudflare's network; by country, region and autonomous system)
   temporal: not checked
