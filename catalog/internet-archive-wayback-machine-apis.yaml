@@ -34,6 +34,13 @@ observed:
   final_url: https://archive.org/help/wayback_api.php
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20260611114048/https://archive.org/help/wayback_api.php
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-06-11'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 200).'
 coverage:
   spatial: Global (the public web, as captured)
   temporal: not checked (capture dates vary by URL); the API page itself says "Updated on September, 24, 2013"
