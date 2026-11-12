@@ -37,6 +37,13 @@ observed:
   final_url: https://nvd.nist.gov/vuln/data-feeds
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261017102726/https://nvd.nist.gov/vuln/data-feeds
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-17'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: global (vulnerabilities in products from any country)
   temporal: yearly feeds from 2002 (the 2002 feed includes earlier CVEs) to present

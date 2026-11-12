@@ -33,6 +33,13 @@ observed:
   final_url: https://libraries.io/api
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261031062328/https://libraries.io/api
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-31'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: global (public package registries)
   temporal: not checked

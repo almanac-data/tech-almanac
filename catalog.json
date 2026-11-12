@@ -688,6 +688,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261027060418/https://www.gharchive.org/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-10-27",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 200)."
+        }
+      ],
       "coverage": {
         "spatial": "global (public activity on github.com)",
         "temporal": "2011-02-12 to present (Timeline API to 2014-12-31, Events API from 2015-01-01)",
@@ -741,6 +751,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261111220101/https://docs.deps.dev/bigquery/v1/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (public package registries and their source repositories)",
         "temporal": "not checked",
@@ -796,6 +816,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261101065302/https://osv.dev/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-01",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "global (open-source packages across about 30 ecosystems and Linux distributions)",
         "temporal": "not checked",
@@ -848,6 +878,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20260611114048/https://archive.org/help/wayback_api.php",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-06-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 200)."
+        }
+      ],
       "coverage": {
         "spatial": "Global (the public web, as captured)",
         "temporal": "not checked (capture dates vary by URL); the API page itself says \"Updated on September, 24, 2013\"",
@@ -949,6 +989,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261031062328/https://libraries.io/api",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-10-31",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "global (public package registries)",
         "temporal": "not checked",
@@ -1000,6 +1050,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261111201136/https://www.cve.org/Downloads",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (vulnerabilities in products from any country)",
         "temporal": "program running since 1999; earliest record year not checked in the data",
@@ -1054,6 +1114,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261111150544/https://www.measurementlab.net/data/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (measurements between end-user clients and M-Lab servers worldwide)",
         "temporal": "NDT 2009-present; traceroute 2013-present; other datasets from 2018-2024 onwards",
@@ -1109,6 +1179,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261017102726/https://nvd.nist.gov/vuln/data-feeds",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-10-17",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "global (vulnerabilities in products from any country)",
         "temporal": "yearly feeds from 2002 (the 2002 feed includes earlier CVEs) to present",
@@ -1159,6 +1239,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261111222055/https://docs.npmjs.com/policies/crawlers/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-11: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (all public packages on registry.npmjs.org)",
         "temporal": "not checked",

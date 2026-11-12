@@ -32,6 +32,13 @@ observed:
   final_url: https://docs.npmjs.com/policies/crawlers/
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261111222055/https://docs.npmjs.com/policies/crawlers/
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-11'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-11: a capture it requested from Save Page Now.'
 coverage:
   spatial: global (all public packages on registry.npmjs.org)
   temporal: not checked
