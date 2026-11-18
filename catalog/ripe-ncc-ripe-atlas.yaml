@@ -35,6 +35,13 @@ observed:
   final_url: https://atlas.ripe.net/
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261117140618/https://atlas.ripe.net/
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-17'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now.'
 coverage:
   spatial: global (probe and anchor network, densest in the RIPE NCC service region of Europe, the Middle East and Central Asia)
   temporal: daily dumps for roughly the last month (2026-09-30 to 2026-10-30 seen); API served 2025 results when tested, start year not checked

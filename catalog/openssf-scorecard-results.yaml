@@ -32,6 +32,13 @@ observed:
   final_url: https://api.scorecard.dev/
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20260811174141/https://api.scorecard.dev/
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-08-11'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: global (public repositories, mostly on GitHub)
   temporal: not checked (the API returns the latest result per repository; history depth not checked)

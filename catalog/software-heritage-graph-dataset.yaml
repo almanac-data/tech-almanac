@@ -36,6 +36,13 @@ observed:
   final_url: https://docs.softwareheritage.org/devel/swh-export/graph/dataset.html
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261118230158/https://docs.softwareheritage.org/devel/swh-export/graph/dataset.html
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-18'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now.'
 coverage:
   spatial: global (public source code from major forges, FOSS distributions and language package managers)
   temporal: graph exports listed back to at least 2025-10-08 in the current docs; latest full export 2026-06-04 (58.7 billion nodes, 1.10 trillion edges); earlier exports not checked

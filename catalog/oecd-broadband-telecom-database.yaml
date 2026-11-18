@@ -35,6 +35,13 @@ observed:
   final_url: https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20260605233425/https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-06-05'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: OECD member and accession countries
   temporal: varies by indicator
