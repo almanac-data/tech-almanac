@@ -38,6 +38,13 @@ observed:
   final_url: https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20260719231733/https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-07-19'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: United States (national and state)
   temporal: 1998-2023 (Dec 1998 to Nov 2023 survey waves)

@@ -34,6 +34,13 @@ observed:
   final_url: https://hai.stanford.edu/ai-index/2026-ai-index-report
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261118144713/https://hai.stanford.edu/ai-index/2026-ai-index-report
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-18'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now.'
 coverage:
   spatial: global, with country comparisons
   temporal: annual editions 2017-2026 (2020 not linked on the landing page); series start years vary

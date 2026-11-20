@@ -33,6 +33,13 @@ observed:
   final_url: https://oecd.ai/en/dashboards/overview
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261118224115/https://oecd.ai/en/dashboards/overview
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-11-18'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now.'
 coverage:
   spatial: more than 80 countries, territories and international organisations
   temporal: not checked (entries carry start years; the list is ordered by start year)

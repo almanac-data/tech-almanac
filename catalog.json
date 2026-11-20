@@ -1305,6 +1305,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20260719231733/https://www.ntia.gov/page/download-ntia-internet-use-survey-datasets",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-07-19",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "United States (national and state)",
         "temporal": "1998-2023 (Dec 1998 to Nov 2023 survey waves)",
@@ -1356,6 +1366,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261118224115/https://oecd.ai/en/dashboards/overview",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-18",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "more than 80 countries, territories and international organisations",
         "temporal": "not checked (entries carry start years; the list is ordered by start year)",
@@ -1409,6 +1429,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20260605233425/https://data-explorer.oecd.org/vis?df%5Bds%5D=dsDisseminateFinalDMZ&df%5Bid%5D=DSD_BB_DATABASE%40DF_BB_TEL_DATABASE&df%5Bag%5D=OECD.STI.DEP",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-06-05",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "OECD member and accession countries",
         "temporal": "varies by indicator",
@@ -1459,6 +1489,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20260811174141/https://api.scorecard.dev/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-08-11",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "global (public repositories, mostly on GitHub)",
         "temporal": "not checked (the API returns the latest result per repository; history depth not checked)",
@@ -1510,6 +1550,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261117181316/https://docs.pypi.org/api/bigquery/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-17",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (downloads from and releases on pypi.org)",
         "temporal": "not checked",
@@ -1563,6 +1613,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261117140618/https://atlas.ripe.net/",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-17",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (probe and anchor network, densest in the RIPE NCC service region of Europe, the Middle East and Central Asia)",
         "temporal": "daily dumps for roughly the last month (2026-09-30 to 2026-10-30 seen); API served 2025 results when tested, start year not checked",
@@ -1617,6 +1677,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261115095656/https://crates.io/data-access",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-15",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: the newest existing capture (Save Page Now returned 0)."
+        }
+      ],
       "coverage": {
         "spatial": "global (all crates published to crates.io)",
         "temporal": "full registry history in each dump; historical version downloads back to November 2014 (per the dump README)",
@@ -1671,6 +1741,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261118230158/https://docs.softwareheritage.org/devel/swh-export/graph/dataset.html",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-18",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global (public source code from major forges, FOSS distributions and language package managers)",
         "temporal": "graph exports listed back to at least 2025-10-08 in the current docs; latest full export 2026-06-04 (58.7 billion nodes, 1.10 trillion edges); earlier exports not checked",
@@ -1723,6 +1803,16 @@
         "redirect_chain": [],
         "fingerprint_result": "no-baseline"
       },
+      "recovery": [
+        {
+          "via": "wayback",
+          "url": "https://web.archive.org/web/20261118144713/https://hai.stanford.edu/ai-index/2026-ai-index-report",
+          "authenticity": "timestamped",
+          "permission": "ok",
+          "captured": "2026-11-18",
+          "notes": "Recorded by scripts/capture_archives.py on 2026-11-18: a capture it requested from Save Page Now."
+        }
+      ],
       "coverage": {
         "spatial": "global, with country comparisons",
         "temporal": "annual editions 2017-2026 (2020 not linked on the landing page); series start years vary",
