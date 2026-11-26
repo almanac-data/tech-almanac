@@ -33,6 +33,13 @@ observed:
   final_url: https://www3.wipo.int/ipstats/
   redirect_chain: []
   fingerprint_result: no-baseline
+recovery:
+- via: wayback
+  url: https://web.archive.org/web/20261019000749/https://www3.wipo.int/ipstats/
+  authenticity: timestamped
+  permission: ok
+  captured: '2026-10-19'
+  notes: 'Recorded by scripts/capture_archives.py on 2026-11-25: the newest existing capture (Save Page Now returned 0).'
 coverage:
   spatial: Global (national and regional IP offices; applicant origin countries)
   temporal: varies by indicator (historical data sets before 1980 published separately)
